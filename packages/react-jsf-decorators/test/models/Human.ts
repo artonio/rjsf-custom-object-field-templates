@@ -1,14 +1,14 @@
-import { UiSchemaGrid } from '../../main/decorators/UiSchemaGrid';
-import { UiSchemaGridProp } from '../../main/decorators/UiSchemaGridProp';
+import { RjsfGrid } from '../../main/decorators/RjsfGrid';
+import { RjsfGridProp } from '../../main/decorators/RjsfGridProp';
 
-@UiSchemaGrid({
+@RjsfGrid({
 	'ui:spacing': 16,
-	ObjectFieldTemplate: 'ObjectFieldTemplate'
+	ObjectFieldTemplate: 'RjsfGridFieldTemplate'
 })
 export class Human {
-	@UiSchemaGridProp({ row: 0, span: 6, order: 1 })
+	@RjsfGridProp({ row: 0, span: 6, order: 1 })
 	declare firstName: string
 
-	@UiSchemaGridProp({ row: 0, span: 8, order: 0 })
+	@RjsfGridProp({ row: 0, span: 8, order: 0 })
 	declare lastName: string
 }

@@ -1,13 +1,13 @@
 // Decorator for Tabs, Accordion and Steps
 
-const metadataKey = 'UiSchemaGroup'
+const metadataKey = 'RjsfGroup'
 
 
 export interface IUiSchemaGroup {
 	'ObjectFieldTemplate': string
 }
 
-export const UiSchemaGroup = (props: IUiSchemaGroup) => {
+export const RjsfGroup = (props: IUiSchemaGroup) => {
 	return (target: Function) => {
 		Reflect.defineMetadata(metadataKey, props, target);
 	}

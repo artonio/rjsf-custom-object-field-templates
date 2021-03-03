@@ -6,11 +6,11 @@ import { Type } from '@tsed/core';
 
 export const uiSchemaGenerator = (target: Function) => {
 	const classDecorators = Reflect.getMetadataKeys(target)
-	if (classDecorators.includes('UiSchemaGrid')) {
+	if (classDecorators.includes('RjsfGrid')) {
 		return generateGridUiSchema(target)
 	}
 
-	if (classDecorators.includes('UiSchemaGroup')) {
+	if (classDecorators.includes('RjsfGroup')) {
 		return generateGroupsUiSchema(target)
 	}
 

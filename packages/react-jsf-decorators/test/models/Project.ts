@@ -1,18 +1,18 @@
-import { UiSchemaGridProp } from '../../main/decorators/UiSchemaGridProp';
-import { UiSchemaGrid } from '../../main/decorators/UiSchemaGrid';
+import { RjsfGridProp } from '../../main/decorators/RjsfGridProp';
+import { RjsfGrid } from '../../main/decorators/RjsfGrid';
 import { Task } from './Task';
 
-@UiSchemaGrid({
+@RjsfGrid({
 	'ui:spacing': 10,
-	ObjectFieldTemplate: 'ObjectFieldTemplate'
+	ObjectFieldTemplate: 'RjsfGridFieldTemplate'
 })
 export class Project {
-	@UiSchemaGridProp({ row: 0, span: 6, order: 0 })
+	@RjsfGridProp({ row: 0, span: 6, order: 0 })
 	declare name: string
 
-	@UiSchemaGridProp({ row: 0, span: 6, order: 1 })
+	@RjsfGridProp({ row: 0, span: 6, order: 1 })
 	declare description: string
 
-	@UiSchemaGridProp({row: 1, span: 24, clazz: Task})
+	@RjsfGridProp({row: 1, span: 24, clazz: Task})
 	declare task: Task
 }

@@ -1,6 +1,6 @@
-import { getUiSchemaGrid, IUiSchemaGrid } from '../decorators/UiSchemaGrid';
-import { getUiSchemaGridProp, IMetadata } from '../decorators/UiSchemaGridProp';
-import { getUiSchemaGroup } from '../decorators/UiSchemaGroup';
+import { getUiSchemaGrid, IUiSchemaGrid } from '../decorators/RjsfGrid';
+import { getUiSchemaGridProp, IMetadata } from '../decorators/RjsfGridProp';
+import { getUiSchemaGroup } from '../decorators/RjsfGroup';
 
 const processBasicProps = (props: IMetadata[], uiLayoutObj: any) => {
 	const uniqueRows: number[] = props.map(p => {

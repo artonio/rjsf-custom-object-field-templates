@@ -1,15 +1,15 @@
 import "reflect-metadata";
 
-import { getUiSchemaGroupProp, UiSchemaGroupPropMetadata } from '../decorators/UiSchemaGroupProp';
-import { getUiSchemaGroup, IUiSchemaGroup } from '../decorators/UiSchemaGroup';
+import { getUiSchemaGroupProp, IRjsfGroupPropMetadata } from '../decorators/RjsfGroupProp';
+import { getUiSchemaGroup, IUiSchemaGroup } from '../decorators/RjsfGroup';
 
 export interface IUiGroups {
 	title: string,
 	fields: string[]
 }
 
-const findObjProps = (props: UiSchemaGroupPropMetadata[]) => {
-	const result: UiSchemaGroupPropMetadata[] =  props.filter((p: UiSchemaGroupPropMetadata) => {
+const findObjProps = (props: IRjsfGroupPropMetadata[]) => {
+	const result: IRjsfGroupPropMetadata[] =  props.filter((p: IRjsfGroupPropMetadata) => {
 		return p.propMetadata.hasOwnProperty(p.key)
 	})
 	if (result.length > 0) {
@@ -19,13 +19,13 @@ const findObjProps = (props: UiSchemaGroupPropMetadata[]) => {
 	}
 }
 
-const processBasicProps = (props: UiSchemaGroupPropMetadata[], uiLayoutObj: IUiGroups[]) => {
+const processBasicProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: IUiGroups[]) => {
 	const uniqueTitles: string[] = props.map(p => {
 		return p.propMetadata.title
 	}).filter((v, i, a) => a.indexOf(v) === i && v !== undefined);
 
 	uniqueTitles.forEach((tabTitle: string) => {
-		const fields: UiSchemaGroupPropMetadata[] = props.filter((p: UiSchemaGroupPropMetadata) => {
+		const fields: IRjsfGroupPropMetadata[] = props.filter((p: IRjsfGroupPropMetadata) => {
 			return p.propMetadata.title === tabTitle
 		})
 
@@ -33,7 +33,7 @@ const processBasicProps = (props: UiSchemaGroupPropMetadata[], uiLayoutObj: IUiG
 			title: tabTitle,
 			fields: []
 		}
-		fields.forEach((field: UiSchemaGroupPropMetadata) => {
+		fields.forEach((field: IRjsfGroupPropMetadata) => {
 			if (field.propMetadata.order || field.propMetadata.order === 0) {
 				result.fields[field.propMetadata.order] = field.key
 			} else {
@@ -46,10 +46,10 @@ const processBasicProps = (props: UiSchemaGroupPropMetadata[], uiLayoutObj: IUiG
 	const a = ''
 }
 
-const processObjectProps = (props: UiSchemaGroupPropMetadata[], uiLayoutObj: any) => {
+const processObjectProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: any) => {
 	try {
-		const findObjectProps: UiSchemaGroupPropMetadata[] = findObjProps(props)
-		findObjectProps.forEach((item: UiSchemaGroupPropMetadata) => {
+		const findObjectProps: IRjsfGroupPropMetadata[] = findObjProps(props)
+		findObjectProps.forEach((item: IRjsfGroupPropMetadata) => {
 			if (item.propMetadata.uiSchema) {
 				uiLayoutObj[item.key] = item.propMetadata.uiSchema
 			} else {
@@ -71,7 +71,7 @@ const processObjectProps = (props: UiSchemaGroupPropMetadata[], uiLayoutObj: any
 }
 
 export const generateGroupsUiSchema = (target: Function) => {
-	const props: UiSchemaGroupPropMetadata[] = getUiSchemaGroupProp(target)
+	const props: IRjsfGroupPropMetadata[] = getUiSchemaGroupProp(target)
 	const classDecorator: IUiSchemaGroup = getUiSchemaGroup(target)
 
 	const uiSchema: any = {

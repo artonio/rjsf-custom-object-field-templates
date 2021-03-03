@@ -1,15 +1,15 @@
-import { UiSchemaGrid } from '../../main/decorators/UiSchemaGrid';
-import { UiSchemaGridProp } from '../../main/decorators/UiSchemaGridProp';
+import { RjsfGrid } from '../../main/decorators/RjsfGrid';
+import { RjsfGridProp } from '../../main/decorators/RjsfGridProp';
 import { Tabs } from './Tabs';
 
-@UiSchemaGrid({
+@RjsfGrid({
 	'ui:spacing': 16,
 	ObjectFieldTemplate: 'RjsfGridFieldTemplate'
 })
 export class GridWithTabs {
-	@UiSchemaGridProp({ row: 0, span: 12, order: 1, required: true })
+	@RjsfGridProp({ row: 0, span: 12, order: 1, required: true })
 	declare firstName: string
 
-	@UiSchemaGridProp({ row: 0, span: 12, order: 0, clazz: Tabs })
+	@RjsfGridProp({ row: 0, span: 12, order: 0, clazz: Tabs })
 	declare tabsSample: Tabs
 }

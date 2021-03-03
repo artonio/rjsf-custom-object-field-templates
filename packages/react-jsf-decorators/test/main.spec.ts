@@ -11,13 +11,13 @@ describe('Main', () => {
 	it('should serialize tabs with accordion', () => {
 		const schema = uiSchemaGenerator(Tabs)
 		expect(schema).toMatchObject({
-			'ui:ObjectFieldTemplate': 'ObjectTabsTemplate',
+			'ui:ObjectFieldTemplate': 'RjsfTabsFieldTemplate',
 			'ui:groups': [
 				{ title: 'Tab 1', fields: ['a', 'b']},
 				{ title: 'Tab 2', fields: ['c', 'accordionSample']}
 			],
 			accordionSample: {
-				'ui:ObjectFieldTemplate': 'ObjectAccordionTemplate',
+				'ui:ObjectFieldTemplate': 'RjsfAccordionFieldTemplate',
 				'ui:groups': [
 					{ title: 'Accordion 1', fields: ['a', 'b']},
 					{ title: 'Accordion 2', fields: ['c']}
@@ -29,7 +29,7 @@ describe('Main', () => {
 	it('should serialize grid with tabs', () => {
 		const schema = uiSchemaGenerator(GridWithTabs)
 		expect(schema).toMatchObject({
-			'ui:ObjectFieldTemplate': 'ObjectGridTemplate',
+			'ui:ObjectFieldTemplate': 'RjsfGridFieldTemplate',
 			'ui:spacing': 16,
 			'ui:layout': [
 				{
@@ -39,13 +39,13 @@ describe('Main', () => {
 				}
 			],
 			tabsSample: {
-				'ui:ObjectFieldTemplate': 'ObjectTabsTemplate',
+				'ui:ObjectFieldTemplate': 'RjsfTabsFieldTemplate',
 				'ui:groups': [
 					{ title: 'Tab 1', fields: ['a', 'b']},
 					{ title: 'Tab 2', fields: ['c', 'accordionSample']}
 				],
 				accordionSample: {
-					'ui:ObjectFieldTemplate': 'ObjectAccordionTemplate',
+					'ui:ObjectFieldTemplate': 'RjsfAccordionFieldTemplate',
 					'ui:groups': [
 						{ title: 'Accordion 1', fields: ['a', 'b']},
 						{ title: 'Accordion 2', fields: ['c']}

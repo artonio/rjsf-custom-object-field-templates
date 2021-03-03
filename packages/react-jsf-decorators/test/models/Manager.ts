@@ -1,18 +1,18 @@
-import { UiSchemaGrid } from '../../main/decorators/UiSchemaGrid';
-import { UiSchemaGridProp } from '../../main/decorators/UiSchemaGridProp';
+import { RjsfGrid } from '../../main/decorators/RjsfGrid';
+import { RjsfGridProp } from '../../main/decorators/RjsfGridProp';
 import { Project } from './Project';
 
-@UiSchemaGrid({
+@RjsfGrid({
 	'ui:spacing': 16,
-	ObjectFieldTemplate: 'ObjectFieldTemplate'
+	ObjectFieldTemplate: 'RjsfGridFieldTemplate'
 })
 export class Manager {
-	@UiSchemaGridProp({ row: 0, span: 6, order: 0 })
+	@RjsfGridProp({ row: 0, span: 6, order: 0 })
 	declare firstName: string
 
-	@UiSchemaGridProp({ row: 0, span: 6, order: 1 })
+	@RjsfGridProp({ row: 0, span: 6, order: 1 })
 	declare lastName: string
 
-	@UiSchemaGridProp({row: 1, span: 24, clazz: Project})
+	@RjsfGridProp({row: 1, span: 24, clazz: Project})
 	declare project: Project
 }
