@@ -1,6 +1,6 @@
 import "reflect-metadata";
 
-import { getUiSchemaGroupProp, IRjsfGroupPropMetadata } from '../decorators/RjsfGroupProp';
+import { getRjsfGroupProp, IRjsfGroupPropMetadata } from '../decorators/RjsfGroupProp';
 import { getUiSchemaGroup, IUiSchemaGroup } from '../decorators/RjsfGroup';
 
 export interface IUiGroups {
@@ -71,7 +71,7 @@ const processObjectProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: any) =
 }
 
 export const generateGroupsUiSchema = (target: Function) => {
-	const props: IRjsfGroupPropMetadata[] = getUiSchemaGroupProp(target)
+	const props: IRjsfGroupPropMetadata[] = getRjsfGroupProp(target)
 	const classDecorator: IUiSchemaGroup = getUiSchemaGroup(target)
 
 	const uiSchema: any = {

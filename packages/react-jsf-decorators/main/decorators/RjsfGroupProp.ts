@@ -39,6 +39,6 @@ export const RjsfGroupProp = (props: IRjsfGroupProp) => {
 	}
 }
 
-export const getUiSchemaGroupProp = (target: Function): IRjsfGroupPropMetadata[] => {
+export const getRjsfGroupProp = (target: Function): IRjsfGroupPropMetadata[] => {
 	return Reflect.getOwnMetadata(formatMetadataKey, target);
 }

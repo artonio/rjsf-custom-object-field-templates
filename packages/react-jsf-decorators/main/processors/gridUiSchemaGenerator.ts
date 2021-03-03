@@ -1,5 +1,5 @@
 import { getUiSchemaGrid, IUiSchemaGrid } from '../decorators/RjsfGrid';
-import { getUiSchemaGridProp, IMetadata } from '../decorators/RjsfGridProp';
+import { getRjsfGridProp, IMetadata } from '../decorators/RjsfGridProp';
 import { getUiSchemaGroup } from '../decorators/RjsfGroup';
 
 const processBasicProps = (props: IMetadata[], uiLayoutObj: any) => {
@@ -68,7 +68,7 @@ const processObjectProps = (props: IMetadata[], uiLayoutObj: any) => {
 }
 
 export const generateGridUiSchema = (target: any) => {
-	const props: IMetadata[] = getUiSchemaGridProp(target)
+	const props: IMetadata[] = getRjsfGridProp(target)
 	const classDecorator: IUiSchemaGrid = getUiSchemaGrid(target)
 
 	const uiSchema: any = {

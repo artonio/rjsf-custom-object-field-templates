@@ -44,6 +44,6 @@ export function RjsfGridProp(props: IProps) {
 	}
 }
 
-export function getUiSchemaGridProp(target: any): IMetadata[] {
+export function getRjsfGridProp(target: any): IMetadata[] {
 	return Reflect.getOwnMetadata(formatMetadataKey, target);
 }

@@ -1,9 +1,9 @@
 import { Enum, Property, Required, Schema } from '@tsed/schema';
 import { getJsonSchemaCustom } from '../processors/custom-tsed/getJsonSchemaCustom';
 import { Type } from '@tsed/core';
-import { getUiSchemaGroupProp, IRjsfGroupPropMetadata } from './RjsfGroupProp';
+import { getRjsfGroupProp, IRjsfGroupPropMetadata } from './RjsfGroupProp';
 import { generateGridUiSchema, generateGroupsUiSchema } from '../processors';
-import { AnyI, getUiSchemaGridProp, IMetadata } from './RjsfGridProp';
+import { AnyI, getRjsfGridProp, IMetadata } from './RjsfGridProp';
 import { getUiSchemaGrid } from './RjsfGrid';
 
 export const getMetadataForClassType = (props: any, target: Object, propertyKey: string) => {
@@ -17,7 +17,7 @@ export const getMetadataForClassType = (props: any, target: Object, propertyKey:
 	const classDecorators = Reflect.getMetadataKeys(clazz)
 
 	if (classDecorators.includes('RjsfGroup')) {
-		const groupProps: IRjsfGroupPropMetadata[] = getUiSchemaGroupProp(props.clazz)
+		const groupProps: IRjsfGroupPropMetadata[] = getRjsfGroupProp(props.clazz)
 		metadata = {
 			key: propertyKey,
 			propMetadata: {
@@ -31,7 +31,7 @@ export const getMetadataForClassType = (props: any, target: Object, propertyKey:
 
 	if (classDecorators.includes('RjsfGrid')) {
 		const classDecorator = getUiSchemaGrid(props.clazz)
-		const gridProps: IMetadata[] = getUiSchemaGridProp(props.clazz);
+		const gridProps: IMetadata[] = getRjsfGridProp(props.clazz);
 		metadata = {
 			key: propertyKey,
 			propMetadata: {
