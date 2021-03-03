@@ -1,0 +1,26 @@
+{
+  "name": "react-jsf-decorators",
+  "version": "1.0.0",
+  "description": "decorators for custom jsf objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generateSchema": "ts-node main/main.ts --project tsconfig.json"
+  },
+  "author": "artonio",
+  "license": "ISC",
+  "dependencies": {
+    "@tsed/schema": "^6.26.4",
+    "antd": "4.12.2",
+    "json-fn": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.28",
+    "jest": "^26.6.3",
+    "reflect-metadata": "^0.1.13",
+    "ts-jest": "^26.5.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
+  }
+}
