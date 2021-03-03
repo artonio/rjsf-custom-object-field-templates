@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5f466baa-56b2-45eb-a3be-faa21cf165fa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/rjsf-custom-object-field-templates.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/react-jsf-custom-object-templates.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/asset-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/css/main.8c8b27cf.chunk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/css/main.8c8b27cf.chunk.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/2.b9e3ff9b.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/2.b9e3ff9b.chunk.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/2.b9e3ff9b.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/3.41a69264.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/3.41a69264.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/main.6cb2c2fd.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/main.6cb2c2fd.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/runtime-main.04f93bd7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/runtime-main.04f93bd7.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/media/logo.6ce24c58.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/App.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/generatedSchema.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/RjsfAccordionFieldTemplate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/RjsfGridFieldTemplate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/RjsfStepsFieldTemplate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/RjsfTabsFieldTemplate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/react-app-env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/reportWebVitals.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/setupTests.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1pDq6zljXXYLhM0y106aSL8cxfX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
+      <recent name="$PROJECT_DIR$/main" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.generateSchema">
+    <configuration name="Main.should serialize tabs with accordion" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/test/main.spec.ts" />
+      <test-names>
+        <test-name value="Main" />
+        <test-name value="should serialize tabs with accordion" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="compiler-playground" type="NodeJSConfigurationType" application-parameters="--project $PROJECT_DIR$/tsconfig.json" node-parameters="$PROJECT_DIR$/node_modules/.bin/ts-node" path-to-js-file="main/compiler-playground.ts" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="NodeJSConfigurationType" application-parameters="--project $PROJECT_DIR$/tsconfig.json" node-parameters="$PROJECT_DIR$/node_modules/.bin/ts-node" path-to-js-file="main/main.ts" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="generateSchema" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="generateSchema" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Jest.Main.should serialize tabs with accordion" />
+      <item itemvalue="Node.js.main" />
+      <item itemvalue="Node.js.compiler-playground" />
+      <item itemvalue="npm.generateSchema" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.generateSchema" />
+        <item itemvalue="Jest.Main.should serialize tabs with accordion" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f466baa-56b2-45eb-a3be-faa21cf165fa" name="Default Changelist" comment="" />
+      <created>1614727837242</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614727837242</updated>
+      <workItem from="1614727838325" duration="6941000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
