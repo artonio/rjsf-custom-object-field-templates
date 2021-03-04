@@ -23,7 +23,11 @@ export const getMetadataForClassType = (props: any, target: Object, propertyKey:
 		}
 		tsedSchemaDecorator = Schema(obj)
 	} else {
-		tsedSchemaDecorator = Schema(getJsonSchemaCustom(clazz as Type<any>))
+		const obj = {...getJsonSchemaCustom(clazz as Type<any>)}
+		if (props.title) {
+			obj['title'] = props.title
+		}
+		tsedSchemaDecorator = Schema(obj)
 	}
 	tsedSchemaDecorator(target, propertyKey)
 
