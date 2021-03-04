@@ -88,6 +88,20 @@ export const getMetadataForBasicType = (props: any, target: Object, propertyKey:
 		const tsedTitleDecorator = Title(props.title)
 		tsedTitleDecorator(target, propertyKey)
 	}
+
+	if (props.type && props.type === 'array') {
+		const obj: any = {
+			type: 'array',
+			items: {
+				type: dataType.name.toLowerCase()
+			}
+		}
+		if (props.title) {
+			obj['title'] = props.title
+		}
+		const tsedSchemaDecorator = Schema(obj)
+		tsedSchemaDecorator(target, propertyKey)
+	}
 	metadata = {
 		key: propertyKey,
 		propMetadata: props
