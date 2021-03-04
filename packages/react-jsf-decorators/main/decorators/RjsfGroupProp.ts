@@ -5,7 +5,8 @@ import { getMetadataForBasicType, getMetadataForClassType } from './utils';
 const formatMetadataKey = "RjsfGroupProp";
 
 export interface IRjsfGroupProp {
-	title: string
+	panelTitle: string
+	title?: string
 	order?: number
 	clazz?: Function
 	uiSchema?: any

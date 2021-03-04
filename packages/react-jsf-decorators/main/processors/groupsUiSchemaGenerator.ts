@@ -4,7 +4,7 @@ import { getRjsfGroupProp, IRjsfGroupPropMetadata } from '../decorators/RjsfGrou
 import { getUiSchemaGroup, IUiSchemaGroup } from '../decorators/RjsfGroup';
 
 export interface IUiGroups {
-	title: string,
+	panelTitle: string,
 	fields: string[]
 }
 
@@ -21,16 +21,16 @@ const findObjProps = (props: IRjsfGroupPropMetadata[]) => {
 
 const processBasicProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: IUiGroups[]) => {
 	const uniqueTitles: string[] = props.map(p => {
-		return p.propMetadata.title
+		return p.propMetadata.panelTitle
 	}).filter((v, i, a) => a.indexOf(v) === i && v !== undefined);
 
 	uniqueTitles.forEach((tabTitle: string) => {
 		const fields: IRjsfGroupPropMetadata[] = props.filter((p: IRjsfGroupPropMetadata) => {
-			return p.propMetadata.title === tabTitle
+			return p.propMetadata.panelTitle === tabTitle
 		})
 
 		const result: IUiGroups = {
-			title: tabTitle,
+			panelTitle: tabTitle,
 			fields: []
 		}
 		fields.forEach((field: IRjsfGroupPropMetadata) => {

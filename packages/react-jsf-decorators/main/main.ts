@@ -8,10 +8,9 @@ import { Shipping } from '../test/models/Shipping/Shipping';
 
 const filePath = path.join(__dirname, '..', '..', 'react-jsf-custom-object-templates', 'src')
 
-// writeSchemasToFile(generateSchemas(GridWithTabs), filePath)
+writeSchemasToFile(generateSchemas(GridWithTabs), filePath)
 // writeSchemasToFile(generateSchemas(User), filePath)
-writeSchemasToFile(generateSchemas(Shipping), filePath)
+// writeSchemasToFile(generateSchemas(Shipping), filePath)
 
 // const schemas = generateSchemas(Shipping)
-const a = ''
 // const schema = getJsonSchema(User)
