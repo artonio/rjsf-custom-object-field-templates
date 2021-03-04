@@ -42,8 +42,6 @@ const processBasicProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: IUiGrou
 		})
 		uiLayoutObj.push(result)
 	})
-
-	const a = ''
 }
 
 const processObjectProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: any) => {
@@ -87,8 +85,3 @@ export const generateGroupsUiSchema = (target: Function) => {
 		return uiSchema
 	}
 }
-
-
-// const schema = generateGroupsUiSchema(Tabs)
-// const a = ''
-

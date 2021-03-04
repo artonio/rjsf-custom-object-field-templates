@@ -9,7 +9,8 @@ export interface IProps {
 	order?: number
 	clazz?: Function
 	uiSchema?: any
-	type?: 'string' | 'number' | 'integer' | 'boolean',
+	type?: 'string' | 'number' | 'integer' | 'boolean' | 'array'
+	title?: string
 	enum?: any[]
 	required?: boolean
 }

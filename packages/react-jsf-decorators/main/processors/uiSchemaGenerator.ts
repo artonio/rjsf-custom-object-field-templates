@@ -31,7 +31,7 @@ export const generateSchemas = (target: Function): {schema: any, uiSchema: any} 
 const buildImportString = (matches: string[]) => {
 	const matchesWithoutQuotes = matches.map((match: string) => {
 		return match.replace(/"/g, '')
-	})
+	}).filter((v, i, a) => a.indexOf(v) === i && v !== undefined);
 	return `import { ${[...matchesWithoutQuotes]} } from './lib'`
 }
 

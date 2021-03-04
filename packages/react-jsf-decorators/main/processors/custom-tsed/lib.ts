@@ -55,6 +55,16 @@ export function serializeItem(value: any, options: JsonSchemaOptions) {
 	return serializeAny(value, options);
 }
 
+export function serializeMap(input: Map<string, any>, options: JsonSchemaOptions = {}): any {
+	options = mapGenericsOptions(options);
+
+	return Array.from(input.entries()).reduce((obj: any, [key, value]) => {
+		obj[key] = serializeItem(value, options);
+
+		return obj;
+	}, {});
+}
+
 export function serializeObject(input: any, options: JsonSchemaOptions) {
 	const {specType, operationIdFormatter, root, schemas, genericTypes, nestedGenerics, useAlias, genericLabels, ...ctx} = options;
 
@@ -79,8 +89,9 @@ const serializeAny = (input: any, options: JsonSchemaOptions = {}) => {
 
 	if ("toJSON" in input) {
 		const schema = input.toJSON(mapGenericsOptions(options));
+		// const schema = serializeMap(input, mapGenericsOptions(options))
 		// const schema = input.toJSON(options);
-
+		const a = ''
 		// return input.canRef ? toRef(input, schema, options) : schema;
 		return schema
 	}

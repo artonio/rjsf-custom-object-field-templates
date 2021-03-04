@@ -1,4 +1,4 @@
-import { Enum, Property, Required, Schema } from '@tsed/schema';
+import { Enum, Property, Required, Schema, Title } from '@tsed/schema';
 import { getJsonSchemaCustom } from '../processors/custom-tsed/getJsonSchemaCustom';
 import { Type } from '@tsed/core';
 import { getRjsfGroupProp, IRjsfGroupPropMetadata } from './RjsfGroupProp';
@@ -10,7 +10,21 @@ export const getMetadataForClassType = (props: any, target: Object, propertyKey:
 	let metadata: any
 	const clazz = props.clazz
 
-	const tsedSchemaDecorator = Schema(getJsonSchemaCustom(clazz as Type<any>))
+	let tsedSchemaDecorator
+	if(props.type && props.type === 'array') {
+		const obj: any = {
+			type: 'array',
+			items: {
+				...getJsonSchemaCustom(clazz as Type<any>)
+			}
+		}
+		if (props.title) {
+			obj['title'] = props.title
+		}
+		tsedSchemaDecorator = Schema(obj)
+	} else {
+		tsedSchemaDecorator = Schema(getJsonSchemaCustom(clazz as Type<any>))
+	}
 	tsedSchemaDecorator(target, propertyKey)
 
 	// We will check what kind of decorators the Function has and take appropriate action
@@ -69,6 +83,10 @@ export const getMetadataForBasicType = (props: any, target: Object, propertyKey:
 	if (props.required) {
 		const tsedRequiredDecorator = Required()
 		tsedRequiredDecorator(target, propertyKey)
+	}
+	if (props.title) {
+		const tsedTitleDecorator = Title(props.title)
+		tsedTitleDecorator(target, propertyKey)
 	}
 	metadata = {
 		key: propertyKey,
