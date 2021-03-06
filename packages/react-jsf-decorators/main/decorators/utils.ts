@@ -1,4 +1,4 @@
-import { Enum, Property, Required, Schema, Title } from '@tsed/schema';
+import { CustomKey, Enum, Property, Required, Schema, Title } from '@tsed/schema';
 import { getJsonSchemaCustom } from '../processors/custom-tsed/getJsonSchemaCustom';
 import { Type } from '@tsed/core';
 import { getRjsfGroupProp, IRjsfGroupPropMetadata } from './RjsfGroupProp';
@@ -111,5 +111,10 @@ export const getMetadataForBasicType = (props: any, target: Object, propertyKey:
 		propMetadata: props
 	}
 
-	return metadata
+	if (props.ignore) {
+		return null
+	} else {
+		return metadata
+	}
+
 }

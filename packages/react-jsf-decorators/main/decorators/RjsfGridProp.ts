@@ -12,7 +12,8 @@ export interface IProps {
 	type?: 'string' | 'number' | 'integer' | 'boolean' | 'array'
 	title?: string
 	enum?: any[]
-	required?: boolean
+	required?: boolean,
+	ignore?: boolean
 }
 
 export interface AnyI {
@@ -27,7 +28,6 @@ export interface IMetadata {
 
 export function RjsfGridProp(props: IProps) {
 	return function(target: Object, propertyKey: string) {
-
 		let metadata: IMetadata
 		if (props.clazz) {
 			metadata = getMetadataForClassType(props, target, propertyKey)
@@ -35,12 +35,14 @@ export function RjsfGridProp(props: IProps) {
 			metadata = getMetadataForBasicType(props, target, propertyKey)
 		}
 
-		const annotations: IMetadata[] = Reflect.getOwnMetadata(formatMetadataKey, target.constructor);
-		if (annotations) {
-			annotations.push(metadata)
-			Reflect.defineMetadata(formatMetadataKey, annotations, target.constructor)
-		} else {
-			Reflect.defineMetadata(formatMetadataKey, [metadata], target.constructor)
+		if (metadata) {
+			const annotations: IMetadata[] = Reflect.getOwnMetadata(formatMetadataKey, target.constructor);
+			if (annotations) {
+				annotations.push(metadata)
+				Reflect.defineMetadata(formatMetadataKey, annotations, target.constructor)
+			} else {
+				Reflect.defineMetadata(formatMetadataKey, [metadata], target.constructor)
+			}
 		}
 	}
 }

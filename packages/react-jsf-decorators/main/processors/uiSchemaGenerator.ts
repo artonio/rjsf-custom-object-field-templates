@@ -20,7 +20,7 @@ export const uiSchemaGenerator = (target: Function) => {
 
 export const generateSchemas = (target: Function): {schema: any, uiSchema: any} => {
 	const uiSchema = uiSchemaGenerator(target)
-	const schema = getJsonSchemaCustom(target as Type<any>)
+	const schema = getJsonSchemaCustom(target as Type<any>, {customKeys: true})
 
 	return {
 		schema,
