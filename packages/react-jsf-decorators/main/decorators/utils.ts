@@ -69,6 +69,55 @@ export const getMetadataForClassType = (props: any, target: Object, propertyKey:
 	return metadata
 }
 
+export const processConditional = (
+	props: any,
+	target: Object,
+	propertyKey: string,
+	dataType: string
+) => {
+	const condition = props.condition
+	const existingObj = Reflect.getOwnMetadata('depKey', target.constructor);
+	const oneOf: any = {
+		type: 'object',
+		properties: {}
+	}
+
+	oneOf.properties[condition.key] = {
+		type: 'string',
+		enum: [condition.value]
+	}
+
+	oneOf.properties[propertyKey] = {
+		type: dataType
+	}
+
+	if (props.title) {
+		oneOf.properties[propertyKey]['title'] = props.title
+	}
+
+	if (existingObj) {
+		if (!existingObj[condition.key]) {
+			existingObj[condition.key] = {
+				oneOf: []
+			}
+		}
+		existingObj[condition.key].oneOf.push(oneOf)
+		Reflect.defineMetadata('depKey', existingObj, target.constructor)
+		const tsedCustomKeyDecorator = CustomKey('dependencies', existingObj)
+		tsedCustomKeyDecorator(target)
+
+	} else {
+		const obj: any = {}
+		obj[condition.key] = {
+			oneOf: []
+		}
+		obj[condition.key].oneOf.push(oneOf)
+		Reflect.defineMetadata('depKey', obj, target.constructor)
+		const tsedCustomKeyDecorator = CustomKey('dependencies', obj)
+		tsedCustomKeyDecorator(target)
+	}
+}
+
 export const getMetadataForBasicType = (props: any, target: Object, propertyKey: string) => {
 	let metadata: any
 
@@ -76,56 +125,7 @@ export const getMetadataForBasicType = (props: any, target: Object, propertyKey:
 	let type = props.type ? props.type : dataType.name.toLowerCase()
 
 	if (props.condition) {
-		const obj = Reflect.getOwnMetadata('depKey', target.constructor);
-		if (obj) {
-			if (obj[props.condition.key]) {
-				const oneOf: any = {
-					type: 'object',
-					properties: {}
-				}
-				oneOf.properties[props.condition.key] = {
-					type: 'string',
-					enum: [props.condition.value]
-				}
-
-				oneOf.properties[propertyKey] = {
-					type
-				}
-				if (props.title) {
-					oneOf.properties[propertyKey]['title'] = props.title
-				}
-				obj[props.condition.key].oneOf.push(oneOf)
-				Reflect.defineMetadata('depKey', obj, target.constructor)
-				const a = ''
-				const b = ''
-			}
-
-		} else {
-			const obj: any = {}
-			obj[props.condition.key] = {
-				oneOf: []
-			}
-			const oneOf: any = {
-				type: 'object',
-				properties: {}
-			}
-			oneOf.properties[props.condition.key] = {
-				type: 'string',
-				enum: [props.condition.value]
-			}
-
-			oneOf.properties[propertyKey] = {
-				type
-			}
-			if (props.title) {
-				oneOf.properties[propertyKey]['title'] = props.title
-			}
-			obj[props.condition.key].oneOf.push(oneOf)
-			Reflect.defineMetadata('depKey', obj, target.constructor)
-		}
-
-		const tsedCustomKeyDecorator = CustomKey('dependencies', obj)
-		tsedCustomKeyDecorator(target)
+		processConditional(props, target, propertyKey, type)
 		metadata = {
 			key: propertyKey,
 			propMetadata: props
