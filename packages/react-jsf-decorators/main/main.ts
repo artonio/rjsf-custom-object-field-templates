@@ -15,9 +15,9 @@ const filePath = path.join(__dirname, '..', '..', 'react-jsf-custom-object-templ
 // writeSchemasToFile(generateSchemas(GridWithTabs), filePath)
 // writeSchemasToFile(generateSchemas(User), filePath)
 // writeSchemasToFile(generateSchemas(Shipping), filePath)
-writeSchemasToFile(generateSchemas(Questions), filePath)
+// writeSchemasToFile(generateSchemas(Questions), filePath)
 // writeSchemasToFile(generateSchemas(Accordion), filePath)
 
-// const schemas = generateSchemas(Questions)
+const schemas = generateSchemas(Questions)
 
-// const a = ''
+const a = ''

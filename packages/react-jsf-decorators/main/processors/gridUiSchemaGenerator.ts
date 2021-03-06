@@ -123,9 +123,9 @@ export const generateGridUiSchema = (target: any) => {
 	}
 
 	processBasicProps(props, uiSchema['ui:layout'])
-	if (classDecorator.conditional) {
-		processPropsConditional(classDecorator.conditional.classes, uiSchema)
-	}
+	// if (classDecorator.conditional) {
+	// 	processPropsConditional(classDecorator.conditional.classes, uiSchema)
+	// }
 	try {
 		processObjectProps(props, uiSchema)
 	} catch (e) {

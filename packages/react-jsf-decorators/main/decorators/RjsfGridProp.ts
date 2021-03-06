@@ -14,6 +14,7 @@ export interface IProps {
 	enum?: any[]
 	required?: boolean,
 	ignore?: boolean
+	condition?: { key: string, value: string }
 }
 
 export interface AnyI {

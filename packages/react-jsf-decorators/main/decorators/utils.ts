@@ -62,10 +62,6 @@ export const getMetadataForClassType = (props: any, target: Object, propertyKey:
 		propMetadata[propertyKey] = gridProps
 	}
 
-	// if (!classDecorators.includes('RjsfGrid') || !classDecorators.includes('RjsfGroup')) {
-	// 	throw new Error('The class must include RjsfGrid or RjsfGroup decorator')
-	// }
-
 	if (classDecorators.includes('RjsfGrid') && classDecorators.includes('RjsfGroup')) {
 		throw new Error('Class cannot have both RjsfGrid and RjsfGroup decorators')
 	}
@@ -78,43 +74,97 @@ export const getMetadataForBasicType = (props: any, target: Object, propertyKey:
 
 	const dataType = Reflect.getMetadata("design:type", target, propertyKey);
 	let type = props.type ? props.type : dataType.name.toLowerCase()
-	const tsedPropDecorator = Property(type)
-	tsedPropDecorator(target, propertyKey)
-	if (props.enum) {
-		const tsedEnumDecorator = Enum(...props.enum)
-		tsedEnumDecorator(target, propertyKey)
-	}
-	if (props.required) {
-		const tsedRequiredDecorator = Required()
-		tsedRequiredDecorator(target, propertyKey)
-	}
-	if (props.title) {
-		const tsedTitleDecorator = Title(props.title)
-		tsedTitleDecorator(target, propertyKey)
-	}
 
-	if (props.type && props.type === 'array') {
-		const obj: any = {
-			type: 'array',
-			items: {
-				type: dataType.name.toLowerCase()
+	if (props.condition) {
+		const obj = Reflect.getOwnMetadata('depKey', target.constructor);
+		if (obj) {
+			if (obj[props.condition.key]) {
+				const oneOf: any = {
+					type: 'object',
+					properties: {}
+				}
+				oneOf.properties[props.condition.key] = {
+					type: 'string',
+					enum: [props.condition.value]
+				}
+
+				oneOf.properties[propertyKey] = {
+					type
+				}
+				if (props.title) {
+					oneOf.properties[propertyKey]['title'] = props.title
+				}
+				obj[props.condition.key].oneOf.push(oneOf)
+				Reflect.defineMetadata('depKey', obj, target.constructor)
+				const a = ''
+				const b = ''
 			}
+
+		} else {
+			const obj: any = {}
+			obj[props.condition.key] = {
+				oneOf: []
+			}
+			const oneOf: any = {
+				type: 'object',
+				properties: {}
+			}
+			oneOf.properties[props.condition.key] = {
+				type: 'string',
+				enum: [props.condition.value]
+			}
+
+			oneOf.properties[propertyKey] = {
+				type
+			}
+			if (props.title) {
+				oneOf.properties[propertyKey]['title'] = props.title
+			}
+			obj[props.condition.key].oneOf.push(oneOf)
+			Reflect.defineMetadata('depKey', obj, target.constructor)
+		}
+
+		const tsedCustomKeyDecorator = CustomKey('dependencies', obj)
+		tsedCustomKeyDecorator(target)
+		metadata = {
+			key: propertyKey,
+			propMetadata: props
+		}
+	} else {
+		const tsedPropDecorator = Property(type)
+		tsedPropDecorator(target, propertyKey)
+		if (props.enum) {
+			const tsedEnumDecorator = Enum(...props.enum)
+			tsedEnumDecorator(target, propertyKey)
+		}
+		if (props.required) {
+			const tsedRequiredDecorator = Required()
+			tsedRequiredDecorator(target, propertyKey)
 		}
 		if (props.title) {
-			obj['title'] = props.title
+			const tsedTitleDecorator = Title(props.title)
+			tsedTitleDecorator(target, propertyKey)
 		}
-		const tsedSchemaDecorator = Schema(obj)
-		tsedSchemaDecorator(target, propertyKey)
-	}
-	metadata = {
-		key: propertyKey,
-		propMetadata: props
+
+		if (props.type && props.type === 'array') {
+			const obj: any = {
+				type: 'array',
+				items: {
+					type: dataType.name.toLowerCase()
+				}
+			}
+			if (props.title) {
+				obj['title'] = props.title
+			}
+			const tsedSchemaDecorator = Schema(obj)
+			tsedSchemaDecorator(target, propertyKey)
+		}
+		metadata = {
+			key: propertyKey,
+			propMetadata: props
+		}
 	}
 
-	if (props.ignore) {
-		return null
-	} else {
-		return metadata
-	}
+	return metadata
 
 }
