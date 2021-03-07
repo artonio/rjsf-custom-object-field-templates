@@ -13,14 +13,14 @@ describe('Main', () => {
 		expect(schema).toMatchObject({
 			'ui:ObjectFieldTemplate': 'RjsfTabsFieldTemplate',
 			'ui:groups': [
-				{ title: 'Tab 1', fields: ['a', 'b']},
-				{ title: 'Tab 2', fields: ['c', 'accordionSample']}
+				{ panelTitle: 'Tab 1', fields: ['a', 'b']},
+				{ panelTitle: 'Tab 2', fields: ['c', 'accordionSample']}
 			],
 			accordionSample: {
 				'ui:ObjectFieldTemplate': 'RjsfAccordionFieldTemplate',
 				'ui:groups': [
-					{ title: 'Accordion 1', fields: ['a', 'b']},
-					{ title: 'Accordion 2', fields: ['c']}
+					{ panelTitle: 'Accordion 1', fields: ['a', 'b']},
+					{ panelTitle: 'Accordion 2', fields: ['c']}
 				]
 			}
 		})
@@ -41,14 +41,14 @@ describe('Main', () => {
 			tabsSample: {
 				'ui:ObjectFieldTemplate': 'RjsfTabsFieldTemplate',
 				'ui:groups': [
-					{ title: 'Tab 1', fields: ['a', 'b']},
-					{ title: 'Tab 2', fields: ['c', 'accordionSample']}
+					{ panelTitle: 'Tab 1', fields: ['a', 'b']},
+					{ panelTitle: 'Tab 2', fields: ['c', 'accordionSample']}
 				],
 				accordionSample: {
 					'ui:ObjectFieldTemplate': 'RjsfAccordionFieldTemplate',
 					'ui:groups': [
-						{ title: 'Accordion 1', fields: ['a', 'b']},
-						{ title: 'Accordion 2', fields: ['c']}
+						{ panelTitle: 'Accordion 1', fields: ['a', 'b']},
+						{ panelTitle: 'Accordion 2', fields: ['c']}
 					]
 				}
 			}
