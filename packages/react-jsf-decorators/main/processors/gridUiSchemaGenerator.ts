@@ -86,32 +86,6 @@ const processObjectProps = (props: IMetadata[], uiLayoutObj: any) => {
 
 }
 
-const processPropsConditional = (classes: Function[], uiLayoutObj: any) => {
-	classes.forEach((clazz: any) => {
-		const props: IMetadata[] = getRjsfGridProp(clazz)
-		try {
-			processObjectProps(props, uiLayoutObj)
-		} catch (e) {}
-		finally {
-			if (props.length === 1) {
-				const prop = props[0]
-				const obj: any = {}
-				obj[prop.key] = {
-					span: prop.propMetadata.span
-				}
-				const layout = uiLayoutObj['ui:layout']
-				let layoutRow = layout[prop.propMetadata.row]
-				if (layoutRow) {
-					layoutRow = {...layoutRow, ...obj}
-					layout[prop.propMetadata.row] = layoutRow
-				} else {
-					layout.push(obj)
-				}
-			}
-		}
-	})
-}
-
 export const generateGridUiSchema = (target: any) => {
 	const props: IMetadata[] = getRjsfGridProp(target)
 	const classDecorator: IUiSchemaGrid = getUiSchemaGrid(target)
@@ -123,9 +97,6 @@ export const generateGridUiSchema = (target: any) => {
 	}
 
 	processBasicProps(props, uiSchema['ui:layout'])
-	// if (classDecorator.conditional) {
-	// 	processPropsConditional(classDecorator.conditional.classes, uiSchema)
-	// }
 	try {
 		processObjectProps(props, uiSchema)
 	} catch (e) {

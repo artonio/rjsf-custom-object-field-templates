@@ -9,6 +9,7 @@ import { Manager } from '../test/models/Manager';
 import { Tabs } from '../test/models/Tabs';
 import { Accordion } from '../test/models/Accordion';
 import { Questions } from '../test/models/SchemaDependencies/Questions';
+import { Elements } from '../test/models/SchemaDependencies/ObjectTestModels/Elements';
 
 const filePath = path.join(__dirname, '..', '..', 'react-jsf-custom-object-templates', 'src')
 
@@ -17,7 +18,9 @@ const filePath = path.join(__dirname, '..', '..', 'react-jsf-custom-object-templ
 // writeSchemasToFile(generateSchemas(Shipping), filePath)
 // writeSchemasToFile(generateSchemas(Questions), filePath)
 // writeSchemasToFile(generateSchemas(Accordion), filePath)
+writeSchemasToFile(generateSchemas(Elements), filePath)
 
-const schemas = generateSchemas(Questions)
+// const schemas = generateSchemas(Questions)
+// const schemas = generateSchemas(Elements)
 
 const a = ''

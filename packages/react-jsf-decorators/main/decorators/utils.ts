@@ -1,4 +1,4 @@
-import { CustomKey, Enum, Property, Required, Schema, Title } from '@tsed/schema';
+import { CustomKey, Description, Enum, Property, Required, Schema, Title } from '@tsed/schema';
 import { getJsonSchemaCustom } from '../processors/custom-tsed/getJsonSchemaCustom';
 import { Type } from '@tsed/core';
 import { getRjsfGroupProp, IRjsfGroupPropMetadata } from './RjsfGroupProp';
@@ -6,30 +6,88 @@ import { generateGridUiSchema, generateGroupsUiSchema } from '../processors';
 import { AnyI, getRjsfGridProp, IMetadata } from './RjsfGridProp';
 import { getUiSchemaGrid } from './RjsfGrid';
 
+// This will generate schema for a property decorated with clazz
+const generateSchemaForClassType = (props: any, target: Object, propertyKey: string) => {
+	const clazz = props.clazz
+	if (props.condition) {
+		processConditional(props, target, propertyKey, 'object')
+	} else {
+		let tsedSchemaDecorator
+		if(props.type && props.type === 'array') {
+			const obj: any = {
+				type: 'array',
+				items: {
+					...getJsonSchemaCustom(clazz as Type<any>)
+				}
+			}
+			if (props.title) {
+				obj['title'] = props.title
+			}
+			tsedSchemaDecorator = Schema(obj)
+		} else {
+			const obj = {...getJsonSchemaCustom(clazz as Type<any>)}
+			if (props.title) {
+				obj['title'] = props.title
+			}
+			if (props.description) {
+				obj['description'] = props.description
+			}
+			tsedSchemaDecorator = Schema(obj)
+		}
+		tsedSchemaDecorator(target, propertyKey)
+	}
+}
+
+const generateSchemaForBasicType = (props: any, target: Object, propertyKey: string) => {
+
+	const dataType = Reflect.getMetadata("design:type", target, propertyKey)
+	let type = props.type ? props.type : dataType.name.toLowerCase()
+
+	if (props.condition) {
+		processConditional(props, target, propertyKey, type)
+	} else {
+		const tsedPropDecorator = Property(type)
+		tsedPropDecorator(target, propertyKey)
+		if (props.enum) {
+			const tsedEnumDecorator = Enum(...props.enum)
+			tsedEnumDecorator(target, propertyKey)
+		}
+		if (props.required) {
+			const tsedRequiredDecorator = Required()
+			tsedRequiredDecorator(target, propertyKey)
+		}
+		if (props.title) {
+			const tsedTitleDecorator = Title(props.title)
+			tsedTitleDecorator(target, propertyKey)
+		}
+
+		if (props.description) {
+			const tsedDescriptionDecorator = Description(props.description)
+			tsedDescriptionDecorator(target, propertyKey)
+		}
+
+		if (props.type && props.type === 'array') {
+			const obj: any = {
+				type: 'array',
+				items: {
+					type: dataType.name.toLowerCase()
+				}
+			}
+			if (props.title) {
+				obj['title'] = props.title
+			}
+			const tsedSchemaDecorator = Schema(obj)
+			tsedSchemaDecorator(target, propertyKey)
+		}
+
+	}
+}
+
 export const getMetadataForClassType = (props: any, target: Object, propertyKey: string) => {
 	let metadata: any
 	const clazz = props.clazz
 
-	let tsedSchemaDecorator
-	if(props.type && props.type === 'array') {
-		const obj: any = {
-			type: 'array',
-			items: {
-				...getJsonSchemaCustom(clazz as Type<any>)
-			}
-		}
-		if (props.title) {
-			obj['title'] = props.title
-		}
-		tsedSchemaDecorator = Schema(obj)
-	} else {
-		const obj = {...getJsonSchemaCustom(clazz as Type<any>)}
-		if (props.title) {
-			obj['title'] = props.title
-		}
-		tsedSchemaDecorator = Schema(obj)
-	}
-	tsedSchemaDecorator(target, propertyKey)
+	generateSchemaForClassType(props, target, propertyKey)
 
 	// We will check what kind of decorators the Function has and take appropriate action
 	const classDecorators = Reflect.getMetadataKeys(clazz)
@@ -87,9 +145,14 @@ export const processConditional = (
 		enum: [condition.value]
 	}
 
-	oneOf.properties[propertyKey] = {
-		type: dataType
+	if (props.clazz) {
+		oneOf.properties[propertyKey] = {...getJsonSchemaCustom(props.clazz as Type<any>)}
+	} else {
+		oneOf.properties[propertyKey] = {
+			type: dataType
+		}
 	}
+
 
 	if (props.title) {
 		oneOf.properties[propertyKey]['title'] = props.title
@@ -121,50 +184,12 @@ export const processConditional = (
 export const getMetadataForBasicType = (props: any, target: Object, propertyKey: string) => {
 	let metadata: any
 
-	const dataType = Reflect.getMetadata("design:type", target, propertyKey);
-	let type = props.type ? props.type : dataType.name.toLowerCase()
+	generateSchemaForBasicType(props, target, propertyKey)
 
-	if (props.condition) {
-		processConditional(props, target, propertyKey, type)
-		metadata = {
-			key: propertyKey,
-			propMetadata: props
-		}
-	} else {
-		const tsedPropDecorator = Property(type)
-		tsedPropDecorator(target, propertyKey)
-		if (props.enum) {
-			const tsedEnumDecorator = Enum(...props.enum)
-			tsedEnumDecorator(target, propertyKey)
-		}
-		if (props.required) {
-			const tsedRequiredDecorator = Required()
-			tsedRequiredDecorator(target, propertyKey)
-		}
-		if (props.title) {
-			const tsedTitleDecorator = Title(props.title)
-			tsedTitleDecorator(target, propertyKey)
-		}
-
-		if (props.type && props.type === 'array') {
-			const obj: any = {
-				type: 'array',
-				items: {
-					type: dataType.name.toLowerCase()
-				}
-			}
-			if (props.title) {
-				obj['title'] = props.title
-			}
-			const tsedSchemaDecorator = Schema(obj)
-			tsedSchemaDecorator(target, propertyKey)
-		}
-		metadata = {
-			key: propertyKey,
-			propMetadata: props
-		}
+	metadata = {
+		key: propertyKey,
+		propMetadata: props
 	}
-
 	return metadata
 
 }

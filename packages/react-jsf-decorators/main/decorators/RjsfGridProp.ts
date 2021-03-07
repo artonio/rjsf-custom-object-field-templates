@@ -11,6 +11,7 @@ export interface IProps {
 	uiSchema?: any
 	type?: 'string' | 'number' | 'integer' | 'boolean' | 'array'
 	title?: string
+	description?: string
 	enum?: any[]
 	required?: boolean,
 	ignore?: boolean
