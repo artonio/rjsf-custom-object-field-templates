@@ -1,19 +1,9 @@
 import { RjsfGrid } from '../../../main/decorators/RjsfGrid';
 import { RjsfGridProp } from '../../../main/decorators/RjsfGridProp';
-import { PetsYes } from './PetsYes';
-import { PetsNo } from './PetsNo';
-import { PetsMaybe } from './PetsMaybe';
 
 @RjsfGrid({
 	'ui:spacing': 16,
 	ObjectFieldTemplate: 'RjsfGridFieldTemplate',
-	conditional: {
-		key: 'pets',
-		classes: [
-			PetsYes,
-			PetsNo,
-			PetsMaybe
-		]}
 })
 export class Questions {
 
@@ -24,4 +14,36 @@ export class Questions {
 		enum: ['Yes', 'No', 'Maybe']
 	})
 	declare pets: string
+
+	@RjsfGridProp({
+		row: 0,
+		span: 12,
+		title: 'What is your gender?',
+		enum: ['Male', 'Female', 'Other']
+	})
+	declare gender: string
+
+	@RjsfGridProp({
+		row: 0,
+		span: 12,
+		title: 'How old is your pet?',
+		condition: {key: 'pets', value: 'Yes'}
+	})
+	declare age: number
+
+	@RjsfGridProp({
+		row: 1,
+		span: 12,
+		title: 'Would you like to buy one?',
+		condition: {key: 'pets', value: 'No'}
+	})
+	declare buy: string
+
+	@RjsfGridProp({
+		row: 0,
+		span: 24,
+		title: 'Other gender',
+		condition: {key: 'gender', value: 'Other'}
+	})
+	declare genderType: string
 }

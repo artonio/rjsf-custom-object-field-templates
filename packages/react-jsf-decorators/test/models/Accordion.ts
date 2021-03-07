@@ -11,6 +11,6 @@ export class Accordion {
 	@RjsfGroupProp({panelTitle: 'Accordion 1', order: 1})
 	declare b: string
 
-	@RjsfGroupProp({panelTitle: 'Accordion 2', order: 2})
+	@RjsfGroupProp({panelTitle: 'Accordion 2', order: 0})
 	declare c: string
 }
