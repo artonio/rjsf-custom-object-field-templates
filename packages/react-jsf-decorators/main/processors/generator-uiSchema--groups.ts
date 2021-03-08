@@ -1,7 +1,7 @@
 import "reflect-metadata";
 
 import { getRjsfGroupProp, IRjsfGroupPropMetadata } from '../decorators/RjsfGroupProp';
-import { getUiSchemaGroup, IUiSchemaGroup } from '../decorators/RjsfGroup';
+import { getUiSchemaGroup, IRjsfGroup } from '../decorators/RjsfGroup';
 
 export interface IUiGroups {
 	panelTitle: string,
@@ -51,9 +51,8 @@ const processObjectProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: any) =
 			if (item.propMetadata.uiSchema) {
 				uiLayoutObj[item.key] = item.propMetadata.uiSchema
 			} else {
-				// @ts-ignore
 				const itemProps: any = item.propMetadata[item.key]
-				const classDecorator: IUiSchemaGroup = getUiSchemaGroup(item.propMetadata.clazz)
+				const classDecorator: IRjsfGroup = getUiSchemaGroup(item.propMetadata.clazz as Function)
 				uiLayoutObj[item.key] = {
 					'ui:ObjectFieldTemplate': classDecorator.ObjectFieldTemplate,
 					'ui:groups': []
@@ -70,7 +69,7 @@ const processObjectProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: any) =
 
 export const generateGroupsUiSchema = (target: Function) => {
 	const props: IRjsfGroupPropMetadata[] = getRjsfGroupProp(target)
-	const classDecorator: IUiSchemaGroup = getUiSchemaGroup(target)
+	const classDecorator: IRjsfGroup = getUiSchemaGroup(target)
 
 	const uiSchema: any = {
 		'ui:ObjectFieldTemplate': classDecorator.ObjectFieldTemplate,

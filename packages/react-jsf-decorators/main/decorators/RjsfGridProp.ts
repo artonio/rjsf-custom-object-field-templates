@@ -16,16 +16,12 @@ export interface IProps {
 	required?: boolean,
 	ignore?: boolean
 	condition?: { key: string, value: string }
-}
-
-export interface AnyI {
 	[prop: string]: any
 }
 
-
 export interface IMetadata {
 	key: string
-	propMetadata: IProps | AnyI
+	propMetadata: IProps
 }
 
 export function RjsfGridProp(props: IProps) {

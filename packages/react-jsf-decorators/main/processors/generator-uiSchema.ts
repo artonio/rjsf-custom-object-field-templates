@@ -1,10 +1,10 @@
 import "reflect-metadata";
-import { generateGridUiSchema } from './gridUiSchemaGenerator';
-import { generateGroupsUiSchema } from './groupsUiSchemaGenerator';
+import { generateGridUiSchema } from './generator-uiSchema--grid';
+import { generateGroupsUiSchema } from './generator-uiSchema--groups';
 import { getJsonSchemaCustom } from './custom-tsed/getJsonSchemaCustom';
 import { Type } from '@tsed/core';
 
-export const uiSchemaGenerator = (target: Function) => {
+export const generatorUiSchema = (target: Function) => {
 	const classDecorators = Reflect.getMetadataKeys(target)
 	if (classDecorators.includes('RjsfGrid')) {
 		return generateGridUiSchema(target)
@@ -19,7 +19,7 @@ export const uiSchemaGenerator = (target: Function) => {
 }
 
 export const generateSchemas = (target: Function): {schema: any, uiSchema: any} => {
-	const uiSchema = uiSchemaGenerator(target)
+	const uiSchema = generatorUiSchema(target)
 	const schema = getJsonSchemaCustom(target as Type<any>, {customKeys: true})
 
 	return {

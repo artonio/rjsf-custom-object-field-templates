@@ -3,7 +3,7 @@ import { getJsonSchemaCustom } from '../processors/custom-tsed/getJsonSchemaCust
 import { Type } from '@tsed/core';
 import { getRjsfGroupProp, IRjsfGroupPropMetadata } from './RjsfGroupProp';
 import { generateGridUiSchema, generateGroupsUiSchema } from '../processors';
-import { AnyI, getRjsfGridProp, IMetadata } from './RjsfGridProp';
+import { getRjsfGridProp, IMetadata } from './RjsfGridProp';
 import { getUiSchemaGrid } from './RjsfGrid';
 
 // This will generate schema for a property decorated with clazz
@@ -101,7 +101,7 @@ export const getMetadataForClassType = (props: any, target: Object, propertyKey:
 				uiSchema: generateGroupsUiSchema(props.clazz)
 			}
 		}
-		const propMetadata = metadata.propMetadata as AnyI
+		const propMetadata = metadata.propMetadata
 		propMetadata[propertyKey] = groupProps
 	}
 
@@ -116,7 +116,7 @@ export const getMetadataForClassType = (props: any, target: Object, propertyKey:
 				'ui:spacing': classDecorator['ui:spacing']
 			}
 		}
-		const propMetadata = metadata.propMetadata as AnyI
+		const propMetadata = metadata.propMetadata
 		propMetadata[propertyKey] = gridProps
 	}
 

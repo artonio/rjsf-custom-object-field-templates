@@ -2,14 +2,14 @@ import "reflect-metadata";
 import { Human } from './models/Human';
 import { Manager } from './models/Manager';
 import { GridWithTabs } from './models/GridWithTabs';
-import { uiSchemaGenerator } from '../main/processors';
 import { Tabs } from './models/Tabs';
+import { generatorUiSchema } from '../main/processors';
 
 
 describe('Main', () => {
 
 	it('should serialize tabs with accordion', () => {
-		const schema = uiSchemaGenerator(Tabs)
+		const schema = generatorUiSchema(Tabs)
 		expect(schema).toMatchObject({
 			'ui:ObjectFieldTemplate': 'RjsfTabsFieldTemplate',
 			'ui:groups': [
@@ -27,7 +27,7 @@ describe('Main', () => {
 	})
 
 	it('should serialize grid with tabs', () => {
-		const schema = uiSchemaGenerator(GridWithTabs)
+		const schema = generatorUiSchema(GridWithTabs)
 		expect(schema).toMatchObject({
 			'ui:ObjectFieldTemplate': 'RjsfGridFieldTemplate',
 			'ui:spacing': 16,
@@ -56,7 +56,7 @@ describe('Main', () => {
 	})
 
 	it('should serialize basic object', () => {
-		const schema = uiSchemaGenerator(Human)
+		const schema = generatorUiSchema(Human)
 		expect(schema).toMatchObject({
 			'ui:spacing': 16,
 			'ui:layout': [
@@ -70,7 +70,7 @@ describe('Main', () => {
 	})
 
 	it.skip('should serialize with nested props', () => {
-		const schema = uiSchemaGenerator(Manager)
+		const schema = generatorUiSchema(Manager)
 		expect(schema).toMatchObject({
 			'ui:spacing': 16,
 			'ui:layout': [

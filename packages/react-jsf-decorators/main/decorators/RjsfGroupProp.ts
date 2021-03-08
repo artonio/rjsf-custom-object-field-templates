@@ -1,5 +1,4 @@
 import "reflect-metadata";
-import { AnyI } from './RjsfGridProp';
 import { getMetadataForBasicType, getMetadataForClassType } from './utils';
 
 const formatMetadataKey = "RjsfGroupProp";
@@ -13,11 +12,12 @@ export interface IRjsfGroupProp {
 	type?: 'string' | 'number' | 'integer' | 'boolean'
 	enum?: any[]
 	required?: boolean
+	[prop: string]: any
 }
 
 export interface IRjsfGroupPropMetadata {
 	key: string,
-	propMetadata: IRjsfGroupProp | AnyI
+	propMetadata: IRjsfGroupProp
 }
 
 export const RjsfGroupProp = (props: IRjsfGroupProp) => {

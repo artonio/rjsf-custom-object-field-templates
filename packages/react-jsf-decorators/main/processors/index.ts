@@ -1,3 +1,3 @@
-export * from './gridUiSchemaGenerator'
-export * from './groupsUiSchemaGenerator'
-export * from './uiSchemaGenerator'
+export * from './generator-uiSchema--grid'
+export * from './generator-uiSchema--groups'
+export * from './generator-uiSchema'

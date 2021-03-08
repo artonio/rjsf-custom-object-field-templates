@@ -54,9 +54,8 @@ const processObjectProps = (props: IMetadata[], uiLayoutObj: any) => {
 					uiLayoutObj[item.key] = item.propMetadata.uiSchema
 				}
 			} else {
-				// @ts-ignore
 				const props: any = item.propMetadata[item.key]
-				const classDecorator = getUiSchemaGroup(item.propMetadata.clazz)
+				const classDecorator = getUiSchemaGroup(item.propMetadata.clazz as Function)
 
 				if (item.propMetadata.type === 'array') {
 					uiLayoutObj[item.key] = {
@@ -75,7 +74,6 @@ const processObjectProps = (props: IMetadata[], uiLayoutObj: any) => {
 					processBasicProps(props, uiLayoutObj[item.key]['ui:layout'])
 					processObjectProps(props, uiLayoutObj[item.key])
 				}
-				// @ts-ignore
 				uiLayoutObj[item.key]['ui:spacing'] = item.propMetadata['ui:spacing']
 
 			}
@@ -99,10 +97,8 @@ export const generateGridUiSchema = (target: any) => {
 	processBasicProps(props, uiSchema['ui:layout'])
 	try {
 		processObjectProps(props, uiSchema)
-	} catch (e) {
-		// console.log(e.message)
-	} finally {
+	} catch (e) {}
+	finally {
 		return uiSchema
 	}
-
 }

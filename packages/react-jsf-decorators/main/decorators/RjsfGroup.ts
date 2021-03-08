@@ -3,16 +3,16 @@
 const metadataKey = 'RjsfGroup'
 
 
-export interface IUiSchemaGroup {
+export interface IRjsfGroup {
 	'ObjectFieldTemplate': string
 }
 
-export const RjsfGroup = (props: IUiSchemaGroup) => {
+export const RjsfGroup = (props: IRjsfGroup) => {
 	return (target: Function) => {
 		Reflect.defineMetadata(metadataKey, props, target);
 	}
 }
 
-export const getUiSchemaGroup = (target: Function): IUiSchemaGroup => {
+export const getUiSchemaGroup = (target: Function): IRjsfGroup => {
 	return Reflect.getOwnMetadata(metadataKey, target);
 }
