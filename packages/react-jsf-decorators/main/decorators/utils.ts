@@ -1,10 +1,14 @@
-import { CustomKey, Description, Enum, Property, Required, Schema, Title } from '@tsed/schema';
+import { CustomKey, Default, Description, Enum, Property, Required, Schema, Title } from '@tsed/schema';
 import { getJsonSchemaCustom } from '../processors/custom-tsed/getJsonSchemaCustom';
 import { Type } from '@tsed/core';
 import { getRjsfGroupProp, IRjsfGroupPropMetadata } from './RjsfGroupProp';
 import { generateGridUiSchema, generateGroupsUiSchema } from '../processors';
 import { getRjsfGridProp, IMetadata } from './RjsfGridProp';
 import { getUiSchemaGrid } from './RjsfGrid';
+
+const isBoolean = (val: any) => {
+	return val === false || val === true
+}
 
 // This will generate schema for a property decorated with clazz
 const generateSchemaForClassType = (props: any, target: Object, propertyKey: string) => {
@@ -13,7 +17,8 @@ const generateSchemaForClassType = (props: any, target: Object, propertyKey: str
 		processConditional(props, target, propertyKey, 'object')
 	} else {
 		let tsedSchemaDecorator
-		if(props.type && props.type === 'array') {
+		// if(props.type && props.type === 'array') {
+		if(props.isArray) {
 			const obj: any = {
 				type: 'array',
 				items: {
@@ -66,12 +71,25 @@ const generateSchemaForBasicType = (props: any, target: Object, propertyKey: str
 			tsedDescriptionDecorator(target, propertyKey)
 		}
 
-		if (props.type && props.type === 'array') {
+		if (props.default) {
+			const tsedDefaultDecorator = Default(props.default)
+			tsedDefaultDecorator(target, propertyKey)
+		}
+
+		if (props.isArray) {
 			const obj: any = {
 				type: 'array',
 				items: {
-					type: dataType.name.toLowerCase()
+					type: 'string'
 				}
+			}
+
+			if (props.default || props.default === 0 || props.default === false) {
+				obj.default = props.default
+			}
+
+			if (props.type) {
+				obj.items.type = props.type
 			}
 			if (props.title) {
 				obj['title'] = props.title
@@ -141,12 +159,11 @@ export const processConditional = (
 	}
 
 	oneOf.properties[condition.key] = {
-		type: 'string',
 		enum: [condition.value]
 	}
 
 	if (props.clazz) {
-		oneOf.properties[propertyKey] = {...getJsonSchemaCustom(props.clazz as Type<any>)}
+		oneOf.properties[propertyKey] = {...getJsonSchemaCustom(props.clazz as Type<any>, {customKeys: true})}
 	} else {
 		oneOf.properties[propertyKey] = {
 			type: dataType
@@ -165,6 +182,17 @@ export const processConditional = (
 			}
 		}
 		existingObj[condition.key].oneOf.push(oneOf)
+		if (isBoolean(condition.value) && existingObj[condition.key].oneOf < 2) {
+			const oneOfObj: any = {
+				type: 'object',
+				properties: {
+				}
+			}
+			oneOfObj.properties[condition.key] = {
+				enum: [!condition.value]
+			}
+			existingObj[condition.key].oneOf.push(oneOfObj)
+		}
 		Reflect.defineMetadata('depKey', existingObj, target.constructor)
 		const tsedCustomKeyDecorator = CustomKey('dependencies', existingObj)
 		tsedCustomKeyDecorator(target)
@@ -175,6 +203,17 @@ export const processConditional = (
 			oneOf: []
 		}
 		obj[condition.key].oneOf.push(oneOf)
+		if (isBoolean(condition.value) && obj[condition.key].oneOf.length < 2) {
+			const oneOfObj: any = {
+				type: 'object',
+				properties: {
+				}
+			}
+			oneOfObj.properties[condition.key] = {
+				enum: [!condition.value]
+			}
+			obj[condition.key].oneOf.push(oneOfObj)
+		}
 		Reflect.defineMetadata('depKey', obj, target.constructor)
 		const tsedCustomKeyDecorator = CustomKey('dependencies', obj)
 		tsedCustomKeyDecorator(target)

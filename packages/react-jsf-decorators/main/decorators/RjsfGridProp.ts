@@ -9,13 +9,15 @@ export interface IProps {
 	order?: number
 	clazz?: Function
 	uiSchema?: any
-	type?: 'string' | 'number' | 'integer' | 'boolean' | 'array'
+	type?: 'string' | 'number' | 'integer' | 'boolean'
+	isArray?: boolean
 	title?: string
 	description?: string
+	default?: string
 	enum?: any[]
 	required?: boolean,
 	ignore?: boolean
-	condition?: { key: string, value: string }
+	condition?: { key: string, value: any }
 	[prop: string]: any
 }
 

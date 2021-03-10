@@ -3,10 +3,16 @@ import { Human } from './models/Human';
 import { Manager } from './models/Manager';
 import { GridWithTabs } from './models/GridWithTabs';
 import { Tabs } from './models/Tabs';
-import { generatorUiSchema } from '../main/processors';
+import { generateSchemas, generatorUiSchema } from '../main/processors';
+import { CardProps } from './models/ArrayTypes/CardProps';
 
 
 describe('Main', () => {
+
+	it('should serialize basic array', () => {
+		const schemas = generateSchemas(CardProps)
+		const a = ''
+	})
 
 	it('should serialize tabs with accordion', () => {
 		const schema = generatorUiSchema(Tabs)
