@@ -17,7 +17,6 @@ const generateSchemaForClassType = (props: any, target: Object, propertyKey: str
 		processConditional(props, target, propertyKey, 'object')
 	} else {
 		let tsedSchemaDecorator
-		// if(props.type && props.type === 'array') {
 		if(props.isArray) {
 			const obj: any = {
 				type: 'array',

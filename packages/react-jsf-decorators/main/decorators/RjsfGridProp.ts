@@ -13,7 +13,7 @@ export interface IProps {
 	isArray?: boolean
 	title?: string
 	description?: string
-	default?: string
+	default?: any
 	enum?: any[]
 	required?: boolean,
 	ignore?: boolean
