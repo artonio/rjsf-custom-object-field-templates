@@ -5,20 +5,13 @@ import { RjsfGridProp } from '../../../main/decorators/RjsfGridProp';
 	'ui:spacing': 16,
 	ObjectFieldTemplate: 'RjsfGridFieldTemplate'
 })
-export class PetsYes {
-
+export class BasicEnumDisabledFields {
 	@RjsfGridProp({
 		row: 0,
 		span: 24,
-		enum: ['Yes'],
-		ignore: true
+		title: 'Province',
+		enum: ['Ontario', 'Alberta', 'Quebec'],
+		uiSchema: {'ui:enumDisabled': ['Alberta']}
 	})
-	declare pets: string
-
-	@RjsfGridProp({
-		row: 0,
-		span: 12,
-		title: 'How old is your pet?'
-	})
-	declare age: number
+	declare province: string
 }

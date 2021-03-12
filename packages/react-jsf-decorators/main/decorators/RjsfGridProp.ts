@@ -15,8 +15,9 @@ export interface IProps {
 	description?: string
 	default?: any
 	enum?: any[]
+	enumNames?: string[]
+	isMultipleChoice?: boolean
 	required?: boolean,
-	ignore?: boolean
 	condition?: { key: string, value: any }
 	[prop: string]: any
 }

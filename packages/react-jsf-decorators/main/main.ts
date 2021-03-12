@@ -17,6 +17,10 @@ import { BasicNumberArray } from '../test/models/ArrayTypes/BasicNumberArray';
 import { BasicNumberArrayDefaultValues } from '../test/models/ArrayTypes/BasicNumberArrayDefaultValues';
 import { GridFormWithHiddenWidget } from '../test/models/CustomUiSchema/GridFormWithHiddenWidget';
 import { GroupFormWithHiddenWidget } from '../test/models/CustomUiSchema/GroupFormWithHiddenWidget';
+import { BasicEnumWithNamesModel } from '../test/models/Enums/BasicEnumWithNamesModel';
+import { BasicEnumDisabledFields } from '../test/models/Enums/BasicEnumDisabledFields';
+import { BasicEnumModel } from '../test/models/Enums/BasicEnumModel';
+import { MultipleChoiceEnumModel } from '../test/models/Enums/MultipleChoiceEnumModel';
 
 const filePath = path.join(__dirname, '..', '..', 'react-jsf-custom-object-templates', 'src')
 
@@ -27,7 +31,7 @@ const filePath = path.join(__dirname, '..', '..', 'react-jsf-custom-object-templ
 // writeSchemasToFile(generateSchemas(Accordion), filePath)
 // writeSchemasToFile(generateSchemas(Elements), filePath)
 // writeSchemasToFile(generateSchemas(InvalidRows), filePath)
-writeSchemasToFile(generateSchemas(GroupFormWithHiddenWidget), filePath)
+writeSchemasToFile(generateSchemas(MultipleChoiceEnumModel), filePath)
 // writeSchemasToFile(generateSchemas(BasicNumberArrayDefaultValues), filePath)
 
 // const schemas = generateSchemas(InvalidRows)
