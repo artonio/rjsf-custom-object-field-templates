@@ -2,6 +2,7 @@ import "reflect-metadata";
 
 import { getRjsfGroupProp, IRjsfGroupPropMetadata } from '../decorators/RjsfGroupProp';
 import { getUiSchemaGroup, IRjsfGroup } from '../decorators/RjsfGroup';
+import { uiSchema } from '../generatedSchema';
 
 export interface IUiGroups {
 	panelTitle: string,
@@ -19,7 +20,9 @@ const findObjProps = (props: IRjsfGroupPropMetadata[]) => {
 	}
 }
 
-const processBasicProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: IUiGroups[]) => {
+// const processBasicProps = (props: IRjsfGroupPropMetadata[], uiGroups: IUiGroups[]) => {
+const processBasicProps = (props: IRjsfGroupPropMetadata[], uiSchema: any) => {
+	const uiGroups = uiSchema['ui:groups']
 	const uniqueTitles: string[] = props.map(p => {
 		return p.propMetadata.panelTitle
 	}).filter((v, i, a) => a.indexOf(v) === i && v !== undefined);
@@ -34,13 +37,18 @@ const processBasicProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: IUiGrou
 			fields: []
 		}
 		fields.forEach((field: IRjsfGroupPropMetadata) => {
+
+			if (field.propMetadata.uiSchema) {
+				uiSchema[field.key] = field.propMetadata.uiSchema
+			}
+
 			if (field.propMetadata.order || field.propMetadata.order === 0) {
 				result.fields[field.propMetadata.order] = field.key
 			} else {
 				result.fields.push(field.key)
 			}
 		})
-		uiLayoutObj.push(result)
+		uiGroups.push(result)
 	})
 }
 
@@ -57,7 +65,7 @@ const processObjectProps = (props: IRjsfGroupPropMetadata[], uiLayoutObj: any) =
 					'ui:ObjectFieldTemplate': classDecorator.ObjectFieldTemplate,
 					'ui:groups': []
 				}
-				processBasicProps(itemProps, uiLayoutObj[item.key]['ui:groups'])
+				processBasicProps(itemProps, uiLayoutObj[item.key])
 				processObjectProps(itemProps, uiLayoutObj[item.key])
 			}
 
@@ -76,7 +84,8 @@ export const generateGroupsUiSchema = (target: Function) => {
 		'ui:groups': []
 	}
 
-	processBasicProps(props, uiSchema['ui:groups'])
+	// processBasicProps(props, uiSchema['ui:groups'])
+	processBasicProps(props, uiSchema)
 	try {
 		processObjectProps(props, uiSchema)
 	} catch (e) {}

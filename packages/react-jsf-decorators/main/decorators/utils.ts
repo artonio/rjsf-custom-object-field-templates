@@ -83,7 +83,10 @@ const generateSchemaForBasicType = (props: any, target: Object, propertyKey: str
 				}
 			}
 
-			if (props.default || props.default === 0 || props.default === false) {
+			if (props.default
+				|| props.default === 0
+				|| props.default === false
+				|| props.default === '') {
 				obj.default = props.default
 			}
 

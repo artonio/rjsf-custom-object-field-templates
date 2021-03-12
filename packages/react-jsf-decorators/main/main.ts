@@ -15,6 +15,8 @@ import { BasicStringArray } from '../test/models/ArrayTypes/BasicStringArray';
 import { BasicBoolArray } from '../test/models/ArrayTypes/BasicBoolArray';
 import { BasicNumberArray } from '../test/models/ArrayTypes/BasicNumberArray';
 import { BasicNumberArrayDefaultValues } from '../test/models/ArrayTypes/BasicNumberArrayDefaultValues';
+import { GridFormWithHiddenWidget } from '../test/models/CustomUiSchema/GridFormWithHiddenWidget';
+import { GroupFormWithHiddenWidget } from '../test/models/CustomUiSchema/GroupFormWithHiddenWidget';
 
 const filePath = path.join(__dirname, '..', '..', 'react-jsf-custom-object-templates', 'src')
 
@@ -25,10 +27,12 @@ const filePath = path.join(__dirname, '..', '..', 'react-jsf-custom-object-templ
 // writeSchemasToFile(generateSchemas(Accordion), filePath)
 // writeSchemasToFile(generateSchemas(Elements), filePath)
 // writeSchemasToFile(generateSchemas(InvalidRows), filePath)
-writeSchemasToFile(generateSchemas(BasicNumberArrayDefaultValues), filePath)
+writeSchemasToFile(generateSchemas(GroupFormWithHiddenWidget), filePath)
+// writeSchemasToFile(generateSchemas(BasicNumberArrayDefaultValues), filePath)
 
 // const schemas = generateSchemas(InvalidRows)
 // const schemas = generateSchemas(Elements)
+// const schemas = generateSchemas(GroupFormWithHiddenWidget)
 
 const a = ''
 
