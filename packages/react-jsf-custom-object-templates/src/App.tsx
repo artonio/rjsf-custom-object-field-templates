@@ -11,7 +11,7 @@ const Form = withTheme(AntDTheme)
 
 function App() {
   return (
-    <Form schema={schema as JSONSchema7} uiSchema={uiSchema}/>
+    <Form schema={schema as JSONSchema7} uiSchema={uiSchema} onSubmit={(data) => {console.log(data.formData)}}/>
   );
 }
 

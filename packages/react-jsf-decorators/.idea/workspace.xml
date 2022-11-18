@@ -1,67 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5f466baa-56b2-45eb-a3be-faa21cf165fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../.idea/rjsf-custom-object-field-templates.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/react-jsf-custom-object-templates.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/asset-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/css/main.8c8b27cf.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/css/main.8c8b27cf.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/2.b9e3ff9b.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/2.b9e3ff9b.chunk.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/2.b9e3ff9b.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/3.41a69264.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/3.41a69264.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/main.6cb2c2fd.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/main.6cb2c2fd.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/runtime-main.04f93bd7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/js/runtime-main.04f93bd7.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/build/static/media/logo.6ce24c58.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/App.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/generatedSchema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/RjsfAccordionFieldTemplate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/RjsfGridFieldTemplate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/RjsfStepsFieldTemplate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/RjsfTabsFieldTemplate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/react-app-env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/reportWebVitals.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/setupTests.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/yarn.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/generatedSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/generatedSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -87,6 +36,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1pDq6zljXXYLhM0y106aSL8cxfX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -94,23 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/artonio/DEV/react/rjsf-custom-object-field-templates/packages/react-jsf-decorators&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/artonio/DEV/react/rjsf-custom-object-field-templates/packages/react-jsf-decorators/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test" />
@@ -174,6 +124,21 @@
       <option name="presentableId" value="Default" />
       <updated>1614727837242</updated>
       <workItem from="1614727838325" duration="6941000" />
+      <workItem from="1660155877583" duration="229000" />
+      <workItem from="1660156164041" duration="7871000" />
+      <workItem from="1660769611366" duration="598000" />
+      <workItem from="1661274200344" duration="598000" />
+      <workItem from="1661371696365" duration="599000" />
+      <workItem from="1662652220643" duration="619000" />
+      <workItem from="1663335140839" duration="2451000" />
+      <workItem from="1663601740350" duration="598000" />
+      <workItem from="1664210031511" duration="58000" />
+      <workItem from="1664210110612" duration="247000" />
+      <workItem from="1665599482356" duration="598000" />
+      <workItem from="1665674729145" duration="151000" />
+      <workItem from="1665674894477" duration="1676000" />
+      <workItem from="1666373318874" duration="1196000" />
+      <workItem from="1666907971261" duration="599000" />
     </task>
     <servers />
   </component>

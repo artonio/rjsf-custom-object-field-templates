@@ -21,6 +21,7 @@ import { BasicEnumWithNamesModel } from '../test/models/Enums/BasicEnumWithNames
 import { BasicEnumDisabledFields } from '../test/models/Enums/BasicEnumDisabledFields';
 import { BasicEnumModel } from '../test/models/Enums/BasicEnumModel';
 import { MultipleChoiceEnumModel } from '../test/models/Enums/MultipleChoiceEnumModel';
+import {CTIMS} from "../test/models/ctims/CTIMS";
 
 const filePath = path.join(__dirname, '..', '..', 'react-jsf-custom-object-templates', 'src')
 
@@ -28,10 +29,11 @@ const filePath = path.join(__dirname, '..', '..', 'react-jsf-custom-object-templ
 // writeSchemasToFile(generateSchemas(User), filePath)
 // writeSchemasToFile(generateSchemas(Shipping), filePath)
 // writeSchemasToFile(generateSchemas(Questions), filePath)
+writeSchemasToFile(generateSchemas(CTIMS), filePath)
 // writeSchemasToFile(generateSchemas(Accordion), filePath)
 // writeSchemasToFile(generateSchemas(Elements), filePath)
 // writeSchemasToFile(generateSchemas(InvalidRows), filePath)
-writeSchemasToFile(generateSchemas(MultipleChoiceEnumModel), filePath)
+// writeSchemasToFile(generateSchemas(MultipleChoiceEnumModel), filePath)
 // writeSchemasToFile(generateSchemas(BasicNumberArrayDefaultValues), filePath)
 
 // const schemas = generateSchemas(InvalidRows)
