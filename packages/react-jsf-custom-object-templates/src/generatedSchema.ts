@@ -49,7 +49,7 @@ export const uiSchema = {
       }
     ],
     "drug": {
-      "ui:ArrayFieldTemplate": CtimsArrayFieldTemplate,
+      // "ui:ArrayFieldTemplate": CtimsArrayFieldTemplate,
       "items": {
         "ui:ObjectFieldTemplate": RjsfGridFieldTemplate,
         "ui:spacing": 16,

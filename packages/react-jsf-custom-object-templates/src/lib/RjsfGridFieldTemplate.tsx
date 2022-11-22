@@ -48,7 +48,7 @@ export const RjsfGridFieldTemplate = (props: ObjectFieldTemplateProps) => {
 
   const fieldsetStyle = {
     // border: '1px solid black',
-    'border-radius': '5px',
+    'borderRadius': '5px',
     margin: '10px'
   }
 
@@ -70,13 +70,16 @@ export const RjsfGridFieldTemplate = (props: ObjectFieldTemplateProps) => {
           />
       )}
       {(uiOptions.description || description) && (
-          <DescriptionFieldTemplate
-              id={`${idSchema.$id}-description`}
-              description={uiOptions.description || description!}
-              schema={schema}
-              uiSchema={uiSchema}
-              registry={registry}
-          />
+          <div>
+            <DescriptionFieldTemplate
+                id={`${idSchema.$id}-description`}
+                description={uiOptions.description || description!}
+                schema={schema}
+                uiSchema={uiSchema}
+                registry={registry}
+            />
+          </div>
+
       )}
       {layout?.map((row: any, index: number) => {
         const rowKeys = Object.keys(row)
