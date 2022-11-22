@@ -79,3 +79,4 @@ const ArrayFieldTemplate = ({
         </>
     );
 }
+export default ArrayFieldTemplate;

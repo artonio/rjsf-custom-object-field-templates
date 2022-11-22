@@ -1,5 +1,5 @@
-import DescriptionField from '../DescriptionField/DescriptionField';
-import TitleField from '../TitleField/TitleField';
+import DescriptionField from "../Templates/DescriptionField";
+import TitleField from "../Templates/TitleField";
 
 export default {
   DescriptionField,
