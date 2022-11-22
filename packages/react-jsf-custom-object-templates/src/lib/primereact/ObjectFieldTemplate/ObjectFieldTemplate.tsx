@@ -12,8 +12,6 @@ const ObjectFieldTemplate = ({
   schema,
 }: ObjectFieldTemplateProps) => {
 
-  const r: Registry = registry
-
   const uiOptions = getUiOptions(uiSchema);
   const TitleFieldTemplate = getTemplate<"TitleFieldTemplate">(
       "TitleFieldTemplate",

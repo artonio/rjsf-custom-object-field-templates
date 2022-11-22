@@ -26,7 +26,7 @@ export const schema = {
   }
 }
 export const uiSchema = {
-  "ui:ObjectFieldTemplate": RjsfGridFieldTemplate,
+  // "ui:ObjectFieldTemplate": RjsfGridFieldTemplate,
   "ui:spacing": 16,
   "ui:layout": [
     {
@@ -36,7 +36,7 @@ export const uiSchema = {
     }
   ],
   "drugList": {
-    "ui:ObjectFieldTemplate": RjsfGridFieldTemplate,
+    // "ui:ObjectFieldTemplate": RjsfGridFieldTemplate,
     "ui:spacing": 16,
     "ui:layout": [
       {
@@ -51,7 +51,7 @@ export const uiSchema = {
     "drug": {
       // "ui:ArrayFieldTemplate": CtimsArrayFieldTemplate,
       "items": {
-        "ui:ObjectFieldTemplate": RjsfGridFieldTemplate,
+        // "ui:ObjectFieldTemplate": RjsfGridFieldTemplate,
         "ui:spacing": 16,
         "ui:layout": [
           {

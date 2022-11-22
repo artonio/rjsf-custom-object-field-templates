@@ -1,5 +1,7 @@
 import { Col, Row } from 'antd'
 import React from 'react'
+import { Card } from 'primereact/card';
+
 import {getTemplate, getUiOptions, ObjectFieldTemplateProps, Registry} from "@rjsf/utils";
 /* eslint-disable react/no-array-index-key */
 
@@ -58,7 +60,7 @@ export const RjsfGridFieldTemplate = (props: ObjectFieldTemplateProps) => {
 
 
   return (
-    <fieldset style={fieldsetStyle} id={props.idSchema.$id}>
+    <Card style={fieldsetStyle} id={props.idSchema.$id}>
       {(uiOptions.title || title) && (
           <TitleFieldTemplate
               id={`${idSchema.$id}-title`}
@@ -69,18 +71,18 @@ export const RjsfGridFieldTemplate = (props: ObjectFieldTemplateProps) => {
               registry={registry}
           />
       )}
-      {(uiOptions.description || description) && (
-          <div>
-            <DescriptionFieldTemplate
-                id={`${idSchema.$id}-description`}
-                description={uiOptions.description || description!}
-                schema={schema}
-                uiSchema={uiSchema}
-                registry={registry}
-            />
-          </div>
+      {/*{(uiOptions.description || description) && (*/}
+      {/*    <div>*/}
+      {/*      <DescriptionFieldTemplate*/}
+      {/*          id={`${idSchema.$id}-description`}*/}
+      {/*          description={uiOptions.description || description!}*/}
+      {/*          schema={schema}*/}
+      {/*          uiSchema={uiSchema}*/}
+      {/*          registry={registry}*/}
+      {/*      />*/}
+      {/*    </div>*/}
 
-      )}
+      {/*)}*/}
       {layout?.map((row: any, index: number) => {
         const rowKeys = Object.keys(row)
 
@@ -122,6 +124,6 @@ export const RjsfGridFieldTemplate = (props: ObjectFieldTemplateProps) => {
           </div>
         )
       })}
-    </fieldset>
+    </Card>
   )
 }

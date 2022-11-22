@@ -2411,6 +2411,11 @@
     nanoid "^3.3.4"
     prop-types "^15.7.2"
 
+"@rjsf/material-ui@^5.0.0-beta.13":
+  version "5.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/@rjsf/material-ui/-/material-ui-5.0.0-beta.13.tgz#5676eecd6a1616bee9c87f5edf8f03e05527b375"
+  integrity sha512-hhipoSJFzG4/Yuz0/UPzyyidTXokOKMC866C+8WSviAf2bIamKvGtKTOD99svb42CLUJYxfoENMMFCi8NUXYNw==
+
 "@rjsf/utils@^5.0.0-beta.13":
   version "5.0.0-beta.13"
   resolved "https://registry.yarnpkg.com/@rjsf/utils/-/utils-5.0.0-beta.13.tgz#9a78efca6cee84bee4af83b4237cc618c6435f0a"

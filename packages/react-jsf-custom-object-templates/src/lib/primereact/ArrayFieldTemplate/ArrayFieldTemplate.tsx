@@ -241,7 +241,6 @@ const DefaultNormalArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
         title={uiSchema?.["ui:title"] || props.title}
         required={required as boolean}
       />
-
       {(uiSchema?.["ui:description"] || props.schema.description) && (
         <ArrayFieldDescription
           key={`array-field-description-${props.idSchema.$id}`}
