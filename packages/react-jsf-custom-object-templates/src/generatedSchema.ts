@@ -1,5 +1,5 @@
 import { RjsfGridFieldTemplate } from './lib'
-import {CtimsArrayFieldTemplate} from "./lib/CtimsArrayFieldTemplate";
+import CtimsArrayFieldTemplate from "./lib/CtimsArrayFieldTemplate";
 export const schema = {
   "type": "object",
   "properties": {
