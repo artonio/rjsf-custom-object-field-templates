@@ -8,13 +8,17 @@ import localValidator from "@rjsf/validator-ajv8";
 
 
 import { schema, uiSchema } from './generatedSchema';
+import CtimsArrayFieldItemTemplate from "./lib/CtimsArrayFieldItemTemplate";
 
 const Form = withTheme(PrimeTheme)
 
 
 function App() {
   return (
-    <Form schema={schema as JSONSchema7} uiSchema={uiSchema} onSubmit={(data) => {console.log(data.formData)}} validator={localValidator}/>
+    <Form schema={schema as JSONSchema7}
+          templates={{ArrayFieldItemTemplate: CtimsArrayFieldItemTemplate}}
+          uiSchema={uiSchema}
+          onSubmit={(data) => {console.log(data.formData)}} validator={localValidator}/>
   );
 }
 
