@@ -27,6 +27,7 @@ export const schema = {
 }
 export const uiSchema = {
   // "ui:ObjectFieldTemplate": RjsfGridFieldTemplate,
+
   "ui:spacing": 16,
   "ui:layout": [
     {

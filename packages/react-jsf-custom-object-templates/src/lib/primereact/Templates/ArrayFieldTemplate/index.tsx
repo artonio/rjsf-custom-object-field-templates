@@ -76,17 +76,21 @@ const ArrayFieldTemplate = ({
         return newChildren
     };
 
+    const arrayStyle: React.CSSProperties = {
+        marginLeft: "318px",
+    }
+
     return (
         <>
-            <ArrayFieldTitleTemplate
-                key={`array-field-title-${idSchema.$id}`}
-                idSchema={idSchema}
-                required={required}
-                title={uiOptions.title || title}
-                schema={schema}
-                uiSchema={uiSchema}
-                registry={registry}
-            />
+            {/*<ArrayFieldTitleTemplate*/}
+            {/*    key={`array-field-title-${idSchema.$id}`}*/}
+            {/*    idSchema={idSchema}*/}
+            {/*    required={required}*/}
+            {/*    title={uiOptions.title || title}*/}
+            {/*    schema={schema}*/}
+            {/*    uiSchema={uiSchema}*/}
+            {/*    registry={registry}*/}
+            {/*/>*/}
             {(uiSchema?.["ui:description"] || schema.description) && (
                 <ArrayFieldDescriptionTemplate
                     key={`array-field-description-${idSchema.$id}`}
@@ -98,7 +102,7 @@ const ArrayFieldTemplate = ({
                 />
             )}
 
-            <div key={`array-item-list-${idSchema.$id}`} className="flex flex-column gap-2">
+            <div key={`array-item-list-${idSchema.$id}`} className="flex flex-column gap-2" style={arrayStyle}>
                 {/*{items && items.map(({ key, ...itemProps }) => {*/}
                 {items && items.map((item: ArrayFieldTemplateItemType, index) => {
                     // deep clone item without stringifying and parsing

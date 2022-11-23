@@ -1,6 +1,5 @@
 import React from "react";
 import {FieldProps, TitleFieldProps} from "@rjsf/utils";
-import {uiSchema} from "../../../../generatedSchema";
 
 const TitleField = ({
                         id,

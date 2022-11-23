@@ -37,12 +37,15 @@ const ObjectFieldTemplate = ({
         uiOptions
     );
 
+    console.log('schema', schema)
+
     return (
         <>
-            {(uiOptions.title || title) && (
+            {/*{(uiOptions.title || title) && (*/}
+            {(schema.title) && (
                 <TitleFieldTemplate
                     id={`${idSchema.$id}-title`}
-                    title={title}
+                    title={schema.title}
                     required={required}
                     schema={schema}
                     uiSchema={uiSchema}
