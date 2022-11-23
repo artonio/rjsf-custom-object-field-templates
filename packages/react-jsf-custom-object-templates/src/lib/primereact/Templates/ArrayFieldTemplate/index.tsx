@@ -64,6 +64,18 @@ const ArrayFieldTemplate = ({
         marginRight: "1px"
     }
 
+    const getArrayItemName = (item: ArrayFieldTemplateItemType, index: number) => {
+        const {children} = item
+        const newProps = {...children.props}
+        const originalName: string = children.props.name
+        // remove numbers and dashes from original name
+        const newName = originalName.replace(/[\d-]/g, '')
+        const indexPlusOne = index + 1
+        newProps.name = `${newName} ${indexPlusOne}`
+        const newChildren = React.cloneElement(children, newProps)
+        return newChildren
+    };
+
     return (
         <>
             <ArrayFieldTitleTemplate
@@ -91,12 +103,8 @@ const ArrayFieldTemplate = ({
                 {items && items.map((item: ArrayFieldTemplateItemType, index) => {
                     // deep clone item without stringifying and parsing
                     const { key, ...itemProps } = item;
-                    const {children} = item
-                    const newProps = {...children.props}
-                    newProps.name = 'test ' + index
-                    const newChildren = React.cloneElement(children, newProps)
-                    // children.props.name = 'Sup' + key
-                    console.log('debug', children.props.name)
+                    const newChildren = getArrayItemName(item, index)
+                    console.log('debug', item)
                     return (
                         <ArrayFieldItemTemplate key={key} {...itemProps} children={newChildren} />
                     )})}
