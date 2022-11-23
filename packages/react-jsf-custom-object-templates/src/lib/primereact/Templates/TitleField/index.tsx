@@ -7,7 +7,10 @@ const TitleField = ({
                         required,
                         registry,
                         title,
+                        schema,
+                        uiSchema
                     }: TitleFieldProps) => {
+    console.log(title)
 
     return (
         <div className="border-bottom-1 mb-2">

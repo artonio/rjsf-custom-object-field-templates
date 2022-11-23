@@ -1,5 +1,5 @@
 import {
-    ArrayFieldDescriptionProps,
+    ArrayFieldDescriptionProps, ArrayFieldTemplateItemType,
     ArrayFieldTemplateProps,
     ArrayFieldTitleProps,
     getTemplate,
@@ -40,6 +40,30 @@ const ArrayFieldTemplate = ({
         uiOptions
     );
 
+    const addItemContainerStyle: React.CSSProperties = {
+        display: "flex",
+        flexDirection: "row",
+        cursor: "pointer"
+    }
+
+    const divCircleStyle = {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "16px",
+        height: "16px",
+        borderRadius: "50%",
+        border: "1px solid #2E72D2",
+        color: "#2E72D2",
+    }
+
+    const textStyle: React.CSSProperties = {
+        fontSize: "16px",
+        color: "#2E72D2",
+        fontFamily: "Arial, sans-serif",
+        marginRight: "1px"
+    }
+
     return (
         <>
             <ArrayFieldTitleTemplate
@@ -63,17 +87,33 @@ const ArrayFieldTemplate = ({
             )}
 
             <div key={`array-item-list-${idSchema.$id}`} className="flex flex-column gap-2">
-                {items && items.map(({ key, ...itemProps }) => (
-                    <ArrayFieldItemTemplate key={key} {...itemProps} />
-                ))}
+                {/*{items && items.map(({ key, ...itemProps }) => {*/}
+                {items && items.map((item: ArrayFieldTemplateItemType, index) => {
+                    // deep clone item without stringifying and parsing
+                    const { key, ...itemProps } = item;
+                    const {children} = item
+                    const newProps = {...children.props}
+                    newProps.name = 'test ' + index
+                    const newChildren = React.cloneElement(children, newProps)
+                    // children.props.name = 'Sup' + key
+                    console.log('debug', children.props.name)
+                    return (
+                        <ArrayFieldItemTemplate key={key} {...itemProps} children={newChildren} />
+                    )})}
 
                 {canAdd && (
-                    <IconButton
-                        icon="plus"
-                        className="mt-1 mb-3 array-item-add"
-                        onClick={onAddClick}
-                        disabled={disabled || readonly}
-                    />
+                    <div style={addItemContainerStyle} onClick={onAddClick}>
+                        <div style={divCircleStyle}>
+                            <i style={textStyle}>+</i>
+                        </div>
+                        <div>Add {title}</div>
+                    {/*<IconButton*/}
+                    {/*    icon="plus"*/}
+                    {/*    className="mt-1 mb-3 array-item-add"*/}
+                    {/*    onClick={onAddClick}*/}
+                    {/*    disabled={disabled || readonly}*/}
+                    {/*/>*/}
+                    </div>
                 )}
             </div>
         </>
