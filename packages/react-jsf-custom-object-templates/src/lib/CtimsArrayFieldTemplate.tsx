@@ -77,6 +77,11 @@ const CtimsArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
         marginLeft: "318px",
     }
 
+    const caretStyle: React.CSSProperties = {
+        marginLeft: '6px',
+        color: "#2E72D2",
+    }
+
     return (
         <>
             {(uiSchema?.["ui:description"] || schema.description) && (
@@ -104,6 +109,7 @@ const CtimsArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
                     <div style={addItemContainerStyle} onClick={onAddClick}>
                         <i className="pi pi-plus-circle" style={circleStyle}></i>
                         <div style={titleStyle}>Add {title}</div>
+                        <i className="bi bi-caret-down-fill" style={caretStyle}></i>
                     </div>
                 )}
             </div>
