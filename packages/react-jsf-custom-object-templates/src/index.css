@@ -27,3 +27,7 @@ code {
   background: white;
   border: 0;
 }
+
+.p-inputtext {
+  height: 46px;
+}

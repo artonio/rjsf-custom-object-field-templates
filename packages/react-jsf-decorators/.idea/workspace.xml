@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f466baa-56b2-45eb-a3be-faa21cf165fa" name="Default Changelist" comment="wip">
-      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsInput.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -40,10 +40,17 @@ const CtimsInput = (props: WidgetProps) => {
         flexDirection: "column"
     }
 
+    const labelStyle: React.CSSProperties = {
+        fontFamily: "Inter, sans-serif",
+        fontWeight: 400,
+        fontSize: "14px",
+        marginBottom: '7px',
+    }
+
     return (
         <div style={containerStyle}>
             {labelValue && (
-                <span>{labelValue}</span>
+                <span style={labelStyle}>{labelValue}</span>
             )}
             <InputText
                 id={id}
