@@ -47,35 +47,18 @@ const CtimsArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
         boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25)',
     }
 
-    const divCircleStyle = {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "16px",
-        height: "16px",
-        borderRadius: "50%",
-        border: "1px solid #2E72D2",
-        marginTop: "20px",
-        marginLeft: "20px",
-        marginRight: "4px",
-        color: "#2E72D2",
-        fontFamily: "Inter, sans-serif",
-        fontWeight: 600,
-    }
-
     const titleStyle: React.CSSProperties = {
         color: "#2E72D2",
         fontFamily: "Inter, sans-serif",
         fontWeight: 600,
         fontSize: "14px",
+        marginLeft: '4px',
     }
 
-    const textStyle: React.CSSProperties = {
-        fontSize: "16px",
+    const circleStyle: React.CSSProperties = {
+        lineHeight: '56px',
         color: "#2E72D2",
-        fontFamily: "Arial, sans-serif",
-        marginRight: "1px",
-        marginTop: "1px"
+        marginLeft: '20px',
     }
 
     const getArrayItemName = (item: ArrayFieldTemplateItemType, index: number) => {
@@ -120,9 +103,7 @@ const CtimsArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
 
                 {canAdd && (
                     <div style={addItemContainerStyle} onClick={onAddClick}>
-                        <div style={divCircleStyle}>
-                            <i style={textStyle}>+</i>
-                        </div>
+                        <i className="pi pi-plus-circle" style={circleStyle}></i>
                         <div style={titleStyle}>Add {title}</div>
                     </div>
                 )}
