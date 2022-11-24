@@ -28,6 +28,34 @@ code {
   border: 0;
 }
 
+.ctimsPanelHeaderTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  background: white;
+  font-weight: 700;
+  height: 56px;
+  border: 0;
+  color: #343a40;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  padding: 0.75rem 1.25rem
+}
+
+.ctimsPanelHeaderOther {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  height: 56px;
+  background: white;
+  font-weight: 700;
+  border: 0;
+  color: #343a40;
+  padding: 0.75rem 1.25rem
+}
+
 .p-inputtext {
   height: 46px;
 }

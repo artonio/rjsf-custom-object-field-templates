@@ -91,7 +91,6 @@ const CtimsArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
             )}
 
             <div key={`array-item-list-${idSchema.$id}`} className="flex flex-column gap-2" style={arrayStyle}>
-                {/*{items && items.map(({ key, ...itemProps }) => {*/}
                 {items && items.map((item: ArrayFieldTemplateItemType, index) => {
                     // deep clone item without stringifying and parsing
                     const { key, ...itemProps } = item;

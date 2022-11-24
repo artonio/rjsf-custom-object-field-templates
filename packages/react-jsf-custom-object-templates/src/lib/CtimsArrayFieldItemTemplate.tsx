@@ -11,7 +11,11 @@ const headerTemplate = (options: any, props: {
 }) => {
     const {title, onDropIndexClick, index, hasRemove} = props;
     const toggleIcon = options.collapsed ? 'pi pi-chevron-down' : 'pi pi-chevron-up';
-    const className = `${options.className} justify-content-start`;
+    // const className = `${options.className} justify-content-start`;
+    let className = `ctimsPanelHeaderTop justify-content-start`;
+    if (index > 0) {
+        className = `ctimsPanelHeaderOther justify-content-start`;
+    }
     const titleClassName = `${options.titleClassName} pl-1`;
 
     const titleStyle: React.CSSProperties = {
