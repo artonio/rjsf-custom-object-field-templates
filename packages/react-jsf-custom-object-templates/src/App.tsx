@@ -12,6 +12,7 @@ import CtimsArrayFieldItemTemplate from "./lib/CtimsArrayFieldItemTemplate";
 import {RegistryWidgetsType} from "@rjsf/utils";
 import CtimsInput from "./lib/CtimsInput";
 import CtimsArrayFieldTemplate from "./lib/CtimsArrayFieldTemplate";
+import CtimsObjectFieldTemplate from "./lib/CtimsObjectFieldTemplate";
 
 const Form = withTheme(PrimeTheme)
 
@@ -26,7 +27,7 @@ function App() {
     <Form schema={schema as JSONSchema7}
           templates={{
             ArrayFieldItemTemplate: CtimsArrayFieldItemTemplate,
-            ArrayFieldTemplate: CtimsArrayFieldTemplate
+            ArrayFieldTemplate: CtimsArrayFieldTemplate,
           }}
           uiSchema={uiSchema}
             widgets={widgets}

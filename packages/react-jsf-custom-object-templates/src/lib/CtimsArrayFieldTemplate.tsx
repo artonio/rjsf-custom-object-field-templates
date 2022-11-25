@@ -74,7 +74,7 @@ const CtimsArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
     };
 
     const arrayStyle: React.CSSProperties = {
-        marginLeft: "318px",
+        // width: '1000px'
     }
 
     const caretStyle: React.CSSProperties = {
@@ -84,23 +84,23 @@ const CtimsArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
 
     return (
         <>
-            {(uiSchema?.["ui:description"] || schema.description) && (
-                <ArrayFieldDescriptionTemplate
-                    key={`array-field-description-${idSchema.$id}`}
-                    description={uiOptions.description || schema.description || ""}
-                    idSchema={idSchema}
-                    schema={schema}
-                    uiSchema={uiSchema}
-                    registry={registry}
-                />
-            )}
+            {/*{(uiSchema?.["ui:description"] || schema.description) && (*/}
+            {/*    <ArrayFieldDescriptionTemplate*/}
+            {/*        key={`array-field-description-${idSchema.$id}`}*/}
+            {/*        description={uiOptions.description || schema.description || ""}*/}
+            {/*        idSchema={idSchema}*/}
+            {/*        schema={schema}*/}
+            {/*        uiSchema={uiSchema}*/}
+            {/*        registry={registry}*/}
+            {/*    />*/}
+            {/*)}*/}
 
-            <div key={`array-item-list-${idSchema.$id}`} className="flex flex-column gap-2" style={arrayStyle}>
+            <div key={`array-item-list-${idSchema.$id}`} id={`array-item-list-${idSchema.$id}`} style={arrayStyle}>
                 {items && items.map((item: ArrayFieldTemplateItemType, index) => {
                     // deep clone item without stringifying and parsing
                     const { key, ...itemProps } = item;
                     const newChildren = getArrayItemName(item, index)
-                    console.log('debug', item)
+                    // console.log('debug', item)
                     return (
                         <ArrayFieldItemTemplate key={key} {...itemProps} children={newChildren} />
                     )})}

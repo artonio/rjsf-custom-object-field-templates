@@ -31,7 +31,7 @@ const headerTemplate = (options: any, props: {
     return (
         <div className={className}>
             <span className={titleClassName} style={titleStyle}>
-                    {title}
+                {title}
             </span>
             <div>
                 {hasRemove && (<i className="pi pi-trash" style={trashIconStyle} onClick={onDropIndexClick(index)}></i>)}
@@ -40,8 +40,6 @@ const headerTemplate = (options: any, props: {
                     <Ripple />
                 </button>
             </div>
-
-
         </div>
     )
 }
@@ -71,8 +69,12 @@ const CtimsArrayFieldItemTemplate = (props: ArrayFieldTemplateItemType) => {
         hasRemove
     }
 
+    const style: React.CSSProperties = {
+        // paddingLeft: '300px',
+    }
+
     return (
-        <div key={`array-item-${index}`} className="flex align-items-start gap-2 p-2 border-1 border-round">
+        <div key={`array-item-${index}`} className="flex align-items-start gap-2 p-2 border-1 border-round" style={style}>
             <Panel headerTemplate={(props) => headerTemplate(props, headerTemplateOptions)} toggleable>
                 <div className="flex-grow-1">{children}</div>
             </Panel>

@@ -1,5 +1,6 @@
 import { RjsfGridFieldTemplate } from './lib'
 import CtimsArrayFieldTemplate from "./lib/CtimsArrayFieldTemplate";
+import CtimsObjectFieldTemplate from "./lib/CtimsObjectFieldTemplate";
 export const schema = {
   "type": "object",
   "properties": {
@@ -37,7 +38,7 @@ export const uiSchema = {
     }
   ],
   "drugList": {
-    // "ui:ObjectFieldTemplate": RjsfGridFieldTemplate,
+    "ui:ObjectFieldTemplate": CtimsObjectFieldTemplate,
     "ui:spacing": 16,
     "ui:layout": [
       {
@@ -52,7 +53,7 @@ export const uiSchema = {
     "drug": {
       // "ui:ArrayFieldTemplate": CtimsArrayFieldTemplate,
       "items": {
-        // "ui:ObjectFieldTemplate": RjsfGridFieldTemplate,
+        "ui:ObjectFieldTemplate": CtimsObjectFieldTemplate,
         "ui:spacing": 16,
         "ui:layout": [
           {
