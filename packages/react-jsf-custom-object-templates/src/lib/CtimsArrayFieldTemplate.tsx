@@ -95,7 +95,7 @@ const CtimsArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
             {/*    />*/}
             {/*)}*/}
 
-            <div key={`array-item-list-${idSchema.$id}`} id={`array-item-list-${idSchema.$id}`} style={arrayStyle}>
+            <div key={`array-item-list-${idSchema.$id}`} id={`array-item-list-${idSchema.$id}`}>
                 {items && items.map((item: ArrayFieldTemplateItemType, index) => {
                     // deep clone item without stringifying and parsing
                     const { key, ...itemProps } = item;

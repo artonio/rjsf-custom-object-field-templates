@@ -1,5 +1,5 @@
 import React from "react";
-import {FieldProps, TitleFieldProps} from "@rjsf/utils";
+import {TitleFieldProps} from "@rjsf/utils";
 
 const TitleField = ({
                         id,
@@ -11,9 +11,15 @@ const TitleField = ({
                     }: TitleFieldProps) => {
     console.log(title)
 
+    const style: React.CSSProperties = {
+        fontFamily: 'Inter, sans-serif',
+        fontWeight: 600,
+        fontSize: '16px',
+    }
+
     return (
-        <div className="border-bottom-1 mb-2">
-            <h5>{(uiSchema && uiSchema["ui:title"]) || title}</h5>
+        <div style={style}>
+            <span>{(uiSchema && uiSchema["ui:title"]) || title}</span>
         </div>
     );
 }

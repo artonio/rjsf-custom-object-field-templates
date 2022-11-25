@@ -6,7 +6,15 @@ const DescriptionField = ({ description, id }: Partial<FieldProps>) => {
         return null;
     }
 
-    return <div id={id} className="text-sm mt-1 mb-3">{description}</div>;
+    const style: React.CSSProperties = {
+        width: '364px',
+        fontFamily: 'Inter, sans-serif',
+        fontWeight: 400,
+        fontSize: '14px',
+        color: 'rgba(0, 0, 0, 0.87)',
+    }
+
+    return <div id={id} style={style}>{description}</div>;
 };
 
 export default DescriptionField;

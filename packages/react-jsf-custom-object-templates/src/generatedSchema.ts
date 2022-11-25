@@ -6,7 +6,7 @@ export const schema = {
   "properties": {
     "drugList": {
       "type": "object",
-      "description": 'This is description',
+      "description": 'The hospital/clinic conducting the trial (study site(s)) in Canada. Please input the full name of the hospital/clinic site. If there is more than one site, please list each hospital/site.',
       "properties": {
         "drug": {
           "type": "array",

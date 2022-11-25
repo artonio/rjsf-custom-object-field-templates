@@ -38,6 +38,7 @@ const CtimsObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
     const titleDescriptionStyle: React.CSSProperties = {
         display: 'flex',
         flexDirection: 'column',
+
     }
     const arrayContainer: React.CSSProperties = {
         width: '640px',

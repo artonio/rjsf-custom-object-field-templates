@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f466baa-56b2-45eb-a3be-faa21cf165fa" name="Default Changelist" comment="wip">
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsObjectFieldTemplate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/generatedSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/generatedSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsArrayFieldItemTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsArrayFieldItemTemplate.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsArrayFieldTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsArrayFieldTemplate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/primereact/Templates/ObjectFieldTemplate/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/primereact/Templates/ObjectFieldTemplate/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsObjectFieldTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsObjectFieldTemplate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/primereact/Templates/DescriptionField/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/primereact/Templates/DescriptionField/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/primereact/Templates/TitleField/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/primereact/Templates/TitleField/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
