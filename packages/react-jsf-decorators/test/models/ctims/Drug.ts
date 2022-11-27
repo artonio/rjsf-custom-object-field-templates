@@ -3,7 +3,7 @@ import {RjsfGridProp} from "../../../main/decorators/RjsfGridProp";
 
 @RjsfGrid({
     'ui:spacing': 16,
-    ObjectFieldTemplate: 'RjsfGridFieldTemplate'
+    ObjectFieldTemplate: 'CtimsObjectFieldTemplate'
 })
 export class Drug {
 

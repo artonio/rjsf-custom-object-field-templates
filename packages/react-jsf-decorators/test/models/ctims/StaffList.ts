@@ -4,7 +4,7 @@ import {Staff} from "./Staff";
 
 @RjsfGrid({
     'ui:spacing': 16,
-    ObjectFieldTemplate: 'RjsfGridFieldTemplate'
+    ObjectFieldTemplate: 'CtimsObjectFieldTemplate'
 })
 export class StaffList {
     @RjsfGridProp({

@@ -51,7 +51,6 @@ export const uiSchema = {
       }
     ],
     "drug": {
-      // "ui:ArrayFieldTemplate": CtimsArrayFieldTemplate,
       "items": {
         "ui:ObjectFieldTemplate": CtimsObjectFieldTemplate,
         "ui:spacing": 16,

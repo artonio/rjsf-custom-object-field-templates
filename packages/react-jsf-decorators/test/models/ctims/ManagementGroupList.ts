@@ -4,7 +4,7 @@ import {ManagementGroup} from "./ManagementGroup";
 
 @RjsfGrid({
     'ui:spacing': 16,
-    ObjectFieldTemplate: 'RjsfGridFieldTemplate'
+    ObjectFieldTemplate: 'CtimsObjectFieldTemplate'
 })
 export class ManagementGroupList {
 

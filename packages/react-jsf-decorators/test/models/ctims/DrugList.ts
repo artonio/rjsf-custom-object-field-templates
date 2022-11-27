@@ -4,7 +4,7 @@ import {Drug} from "./Drug";
 
 @RjsfGrid({
     'ui:spacing': 16,
-    ObjectFieldTemplate: 'RjsfGridFieldTemplate'
+    ObjectFieldTemplate: 'CtimsObjectFieldTemplate'
 })
 export class DrugList {
     @RjsfGridProp({

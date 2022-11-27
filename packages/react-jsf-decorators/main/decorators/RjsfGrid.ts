@@ -4,7 +4,7 @@ const metadataKey = 'RjsfGrid'
 
 export interface IUiSchemaGrid {
 	'ui:spacing': number
-	'ObjectFieldTemplate': 'RjsfGridFieldTemplate'
+	'ObjectFieldTemplate': 'RjsfGridFieldTemplate' | 'CtimsObjectFieldTemplate'
 }
 
 export const RjsfGrid = (props: IUiSchemaGrid) => {

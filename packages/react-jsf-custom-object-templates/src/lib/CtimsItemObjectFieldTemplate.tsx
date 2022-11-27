@@ -1,7 +1,7 @@
 import {getTemplate, getUiOptions, ObjectFieldTemplatePropertyType, ObjectFieldTemplateProps} from "@rjsf/utils";
 import React from "react";
 
-const CtimsObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
+const CtimsItemObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
     const {
         description,
         disabled,
@@ -58,7 +58,6 @@ const CtimsObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
 
     return (
         <>
-            <hr style={hrStyle}/>
             <div style={containerStyle}>
                 <div style={titleDescriptionStyle}>
                     {(schema.title) && (
@@ -95,8 +94,7 @@ const CtimsObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
                         ))}
                 </div>
             </div>
-            <hr style={hrStyle}/>
         </>
     );
 }
-export default CtimsObjectFieldTemplate
+export default CtimsItemObjectFieldTemplate;

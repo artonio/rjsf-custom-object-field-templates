@@ -48,6 +48,16 @@ export const RjsfGridFieldTemplate = (props: ObjectFieldTemplateProps) => {
   const layout = uiSchema?.['ui:layout']
   const gutter = uiSchema?.['ui:spacing']
 
+  const containerStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'row',
+  }
+
+  const titleDescriptionStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+  }
+
   const fieldsetStyle = {
     // border: '1px solid black',
     'borderRadius': '5px',
@@ -58,72 +68,82 @@ export const RjsfGridFieldTemplate = (props: ObjectFieldTemplateProps) => {
     margin: '15px'
   }
 
+  const objectContainerStyle: React.CSSProperties = {
+    width: '640px',
+    marginLeft: 'auto',
+    boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25)',
+    background: 'white'
+  }
+
 
   return (
-    <Card style={fieldsetStyle} id={props.idSchema.$id}>
-      {(uiOptions.title || title) && (
-          <TitleFieldTemplate
-              id={`${idSchema.$id}-title`}
-              title={title}
-              required={required}
-              schema={schema}
-              uiSchema={uiSchema}
-              registry={registry}
-          />
-      )}
-      {/*{(uiOptions.description || description) && (*/}
-      {/*    <div>*/}
-      {/*      <DescriptionFieldTemplate*/}
-      {/*          id={`${idSchema.$id}-description`}*/}
-      {/*          description={uiOptions.description || description!}*/}
-      {/*          schema={schema}*/}
-      {/*          uiSchema={uiSchema}*/}
-      {/*          registry={registry}*/}
-      {/*      />*/}
-      {/*    </div>*/}
+      <div style={containerStyle}>
+        <div style={titleDescriptionStyle}>
+          {(schema.title) && (
+              <TitleFieldTemplate
+                  id={`${idSchema.$id}-title`}
+                  title={schema.title}
+                  required={required}
+                  schema={schema}
+                  uiSchema={uiSchema}
+                  registry={registry}
+              />
+          )}
+          {(schema.description) && (
+              <DescriptionFieldTemplate
+                  id={`${idSchema.$id}-description`}
+                  description={uiOptions.description || description!}
+                  schema={schema}
+                  uiSchema={uiSchema}
+                  registry={registry}
+              />
+          )}
+        </div>
+        <div style={objectContainerStyle}>
+          {layout?.map((row: any, index: number) => {
+            const rowKeys = Object.keys(row)
 
-      {/*)}*/}
-      {layout?.map((row: any, index: number) => {
-        const rowKeys = Object.keys(row)
+            if (row['ui:order'] && row['ui:order'].length > 0) {
+              const orderedKeys = row['ui:order']
 
-        if (row['ui:order'] && row['ui:order'].length > 0) {
-          const orderedKeys = row['ui:order']
+              return (
+                  <div style={rowStyle} key={index}>
+                    <Row gutter={gutter}>
+                      {orderedKeys.map((name: string) => {
+                        // @ts-ignore
+                        if (schema.properties[name]) {
+                          const content = findContent(name)
 
-          return (
-            <div style={rowStyle} key={index}>
-              <Row gutter={gutter}>
-                {orderedKeys.map((name: string) => {
-                  // @ts-ignore
-                  if (schema.properties[name]) {
-                    const content = findContent(name)
+                          return <Col span={row[name].span}>{content?.content}</Col>
+                        }
 
-                    return <Col span={row[name].span}>{content?.content}</Col>
-                  }
+                        return null
+                      })}
+                    </Row>
+                  </div>
+              )
+            }
 
-                  return null
-                })}
-              </Row>
-            </div>
-          )
-        }
+            return (
+                <div style={rowStyle} key={index}>
+                  <Row gutter={gutter}>
+                    {rowKeys.map((name) => {
+                      // @ts-ignore
+                      if (schema.properties[name]) {
+                        const element = findContent(name)
 
-        return (
-          <div style={rowStyle} key={index}>
-            <Row gutter={gutter}>
-              {rowKeys.map((name) => {
-                // @ts-ignore
-                if (schema.properties[name]) {
-                  const element = findContent(name)
+                        return <Col span={row[name].span}>{element?.content}</Col>
+                      }
 
-                  return <Col span={row[name].span}>{element?.content}</Col>
-                }
+                      return null
+                    })}
+                  </Row>
+                </div>
 
-                return null
-              })}
-            </Row>
-          </div>
-        )
-      })}
-    </Card>
+            )
+          })}
+        </div>
+      </div>
+    //
   )
 }

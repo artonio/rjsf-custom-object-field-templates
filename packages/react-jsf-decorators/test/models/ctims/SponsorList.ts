@@ -4,7 +4,7 @@ import {Sponsor} from "./Sponsor";
 
 @RjsfGrid({
     'ui:spacing': 16,
-    ObjectFieldTemplate: 'RjsfGridFieldTemplate'
+    ObjectFieldTemplate: 'CtimsObjectFieldTemplate'
 })
 export class SponsorList {
     @RjsfGridProp({
