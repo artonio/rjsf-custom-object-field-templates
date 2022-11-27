@@ -37,7 +37,7 @@ const CtimsInput = (props: WidgetProps) => {
 
     const containerStyle: React.CSSProperties = {
         display: 'flex',
-        flexDirection: "column"
+        flexDirection: "column",
     }
 
     const labelStyle: React.CSSProperties = {
@@ -45,10 +45,11 @@ const CtimsInput = (props: WidgetProps) => {
         fontWeight: 400,
         fontSize: "14px",
         marginBottom: '7px',
+
     }
 
     return (
-        <div style={containerStyle}>
+        <div style={containerStyle} id="marginhere">
             {labelValue && (
                 <span style={labelStyle}>{labelValue}</span>
             )}

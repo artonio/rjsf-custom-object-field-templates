@@ -65,14 +65,17 @@ export const RjsfGridFieldTemplate = (props: ObjectFieldTemplateProps) => {
   }
 
   const rowStyle = {
-    margin: '15px'
+    marginBottom: '15px'
   }
 
   const objectContainerStyle: React.CSSProperties = {
     width: '640px',
     marginLeft: 'auto',
     boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25)',
-    background: 'white'
+    borderRadius: '6px',
+    background: 'white',
+    paddingLeft: '20px',
+    paddingRight: '20px',
   }
 
 

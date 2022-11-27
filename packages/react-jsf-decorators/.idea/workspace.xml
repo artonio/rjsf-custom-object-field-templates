@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f466baa-56b2-45eb-a3be-faa21cf165fa" name="Default Changelist" comment="wip">
-      <change afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsItemObjectFieldTemplate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/ctims/ClinicalMetadata.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/generatedSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/generatedSchema_backup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsObjectFieldTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsObjectFieldTemplate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/CtimsInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/RjsfGridFieldTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-jsf-custom-object-templates/src/lib/RjsfGridFieldTemplate.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/decorators/RjsfGrid.ts" beforeDir="false" afterPath="$PROJECT_DIR$/main/decorators/RjsfGrid.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/CTIMSDrugListOnly.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/CTIMSDrugListOnly.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/Drug.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/Drug.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/DrugList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/DrugList.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/ManagementGroup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/ManagementGroup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/ManagementGroupList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/ManagementGroupList.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/Site.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/Site.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/SiteList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/SiteList.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/Sponsor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/Sponsor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/SponsorList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/SponsorList.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/Staff.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/Staff.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/ctims/StaffList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/ctims/StaffList.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
